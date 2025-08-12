@@ -1,0 +1,39 @@
+---
+export interface Props {
+  alignItems?: 'flex-start' | 'flex-end' | 'center';
+  justifyContent?: 'flex-start' | 'flex-end' | 'center' | 'space-between';
+  gap?: string;
+  flexDirection?: 'column' | 'row';
+  class?: string;
+}
+const {
+  alignItems = 'flex-start',
+  justifyContent = 'flex-start',
+  gap = '0px',
+  flexDirection = 'column',
+  class: classList,
+} = Astro.props;
+---
+
+<div class=`flex-box ${classList}`>
+  <slot />
+</div>
+
+<style
+  lang="scss"
+  scoped
+  define:vars={{
+    alignItems: `${alignItems}`,
+    justifyContent: `${justifyContent}`,
+    gap: `${gap}`,
+    flexDirection: `${flexDirection}`,
+  }}
+>
+  .flex-box {
+    display: flex;
+    flex-direction: var(--flexDirection);
+    align-items: var(--alignItems);
+    justify-content: var(--justifyContent);
+    gap: var(--gap);
+  }
+</style>

@@ -1,0 +1,38 @@
+.carousel-projects {
+    width: 100%;
+    position: relative;
+
+    &__link {
+        background-color: var(--grey-color);
+        padding: 10px 45px;
+        border-radius: 20px;
+        font-family: var(--montserrat-font);
+        font-weight: 400;
+        font-size: 16px;
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        right: 50%;
+        transform: translate(-50%, -50%);
+        width: max-content;
+        cursor: pointer;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    .carousel-button {
+        top: 50%;
+        transform: translate(-50%, -50%);
+        bottom: 50%;
+    }
+
+    .carousel-button.left {
+        // left: 20px;
+    }
+
+    .carousel-button.right {
+        // right: -50px;
+    }
+}

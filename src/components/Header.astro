@@ -1,0 +1,95 @@
+---
+import Image from './Image.astro';
+import FlexBox from './FlexBox.astro';
+import Container from './Container.astro';
+import ListItems from './react-components/ListItems';
+import { type IListItem } from '../entities/ListItem/model/types';
+
+import {
+    mdiMagnify,
+    mdiHeartOutline,
+    mdiCartOutline,
+    mdiPhoneOutline,
+} from '@mdi/js';
+
+const headerLinks: IListItem[] = [
+    {
+        link: '/',
+        svgIconPath: mdiMagnify,
+        svgIconSize: '36px',
+    },
+    {
+        link: '/',
+        svgIconPath: mdiHeartOutline,
+        svgIconSize: '36px',
+    },
+    {
+        link: '/',
+        svgIconPath: mdiCartOutline,
+        svgIconSize: '36px',
+    },
+    {
+        link: '/',
+        svgIconPath: mdiPhoneOutline,
+        svgIconSize: '36px',
+    },
+];
+---
+
+<Container>
+    <header class="header">
+        <FlexBox>
+            <span>svto@mail.ru</span>
+            <span>+78123005969</span>
+            <span>svto@mail.ru</span>
+        </FlexBox>
+        <FlexBox flexDirection="row" alignItems="center" gap="20px">
+            <a href="/" class="header__logo">
+                <Image src="/logo.svg" width="87px" />
+            </a>
+            <FlexBox flexDirection="row" alignItems="center">
+                <div class="header__company-title">СВ</div>
+                <div class="header__company-subtitle">
+                    ТОРГОВОЕ ОБОРУДОВАНИЕ
+                </div>
+            </FlexBox>
+        </FlexBox>
+        <ul class="header__controls">
+            <ListItems items={headerLinks} />
+        </ul>
+    </header>
+</Container>
+
+<style lang="scss">
+    .header {
+        font-family: var(--roboto-font);
+        padding-block: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &__logo {
+            display: flex;
+            width: fit-content;
+        }
+
+        &__company-title {
+            font-weight: 600;
+            font-size: 100px;
+            line-height: 100%;
+        }
+
+        &__company-subtitle {
+            font-weight: 300;
+            font-size: 30px;
+            width: min-content;
+        }
+
+        &__controls {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+    }
+</style>
