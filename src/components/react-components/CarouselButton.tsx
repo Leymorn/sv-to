@@ -1,25 +1,25 @@
-import SvgIcon from './SvgIcon';
+import { Icon } from 'astro-icon/components';
 import { mdiChevronLeft, mdiChevronRight } from '@mdi/js';
 
 interface Props {
     direction: 'right' | 'left';
-    onClickFunction: () => {};
+    onClickFunction: () => void;
 }
 
 export default function CarouselButton({
     direction,
     onClickFunction,
-}: Props): ReactElement {
+}: Props): React.ReactElement {
     return (
         <button
             className={`carousel-button ${direction}`}
             onClick={onClickFunction}
         >
-            <SvgIcon
-                path={direction === 'left' ? mdiChevronLeft : mdiChevronRight}
+            <Icon
+                name={direction === 'left' ? mdiChevronLeft : mdiChevronRight}
                 size="48px"
                 color="#51993D"
-            ></SvgIcon>
+            ></Icon>
         </button>
     );
 }

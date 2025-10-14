@@ -1,0 +1,13 @@
+---
+interface Props {
+    class?: string;
+}
+
+const { class: classList = '' } = Astro.props;
+---
+
+<div
+    class={`flex items-center w-full max-w-[var(--max-screen)] px-5 ${classList}`}
+>
+    <slot />
+</div>

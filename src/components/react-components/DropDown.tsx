@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import SvgIcon from './SvgIcon';
+import SvgIcon from '../../widgets/shared/ui/SvgIcon';
 import { mdiMenuDown, mdiMenuUp } from '@mdi/js';
 import { type IListItem } from '../../entities/ListItem/model/types';
 import ListItems from './ListItems';

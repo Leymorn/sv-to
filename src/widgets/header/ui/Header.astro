@@ -1,0 +1,23 @@
+---
+import HeaderContacts from './HeaderContacts.astro';
+import Image from '../../../widgets/shared/ui/Image.astro';
+import Container from '../../../widgets/shared/ui/Container.astro';
+import HeaderNavigation from './HeaderNavigation.astro';
+---
+
+<header class="w-full flex flex-col items-center">
+    <HeaderContacts />
+    <Container class="gap-5 py-5">
+        <a href="/" class="header__logo">
+            <Image src="/logo.svg" width="87px" />
+        </a>
+        <div class="flex font-roboto items-center gap-[14px]">
+            <span class="text-[100px] font-semibold leading-[100%]">СВ</span>
+            <div class="flex flex-col gap-2 text-3xl font-light">
+                <span>ТОРГОВОЕ</span>
+                <span>ОБОРУДОВАНИЕ</span>
+            </div>
+        </div>
+    </Container>
+    <HeaderNavigation />
+</header>

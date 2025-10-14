@@ -5,16 +5,18 @@ interface Props {
     banners: string[];
 }
 
-export default function CarouselProjects({ banners }: Props): ReactElement {
+export default function CarouselProjects({
+    banners,
+}: Props): React.ReactElement {
     const [mainBannerIndex, setMainBannerIndex] = useState(0);
 
-    function previuosBanner() {
+    function previuosBanner(): void {
         setMainBannerIndex(
             mainBannerIndex === 0 ? banners.length - 1 : mainBannerIndex - 1
         );
     }
 
-    function nextBanner() {
+    function nextBanner(): void {
         setMainBannerIndex(
             mainBannerIndex === banners.length - 1 ? 0 : mainBannerIndex + 1
         );

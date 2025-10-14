@@ -5,6 +5,9 @@ import prettier from 'eslint-plugin-prettier';
 
 export default [
     {
+        ignores: ['node_modules/**', 'dist/**', 'public/**'],
+    },
+    {
         files: ['**/*.astro'],
         languageOptions: {
             parser: astro.parser,
@@ -21,7 +24,7 @@ export default [
         },
         rules: {
             ...astro.configs.recommended.rules,
-            'prettier/prettier': 'error',
+            'prettier/prettier': ['error', { endOfLine: 'auto' }],
         },
     },
     {
@@ -39,7 +42,7 @@ export default [
         },
         rules: {
             ...tseslint.configs.recommended.rules,
-            'prettier/prettier': 'error',
+            'prettier/prettier': ['error', { endOfLine: 'auto' }],
         },
     },
 ];

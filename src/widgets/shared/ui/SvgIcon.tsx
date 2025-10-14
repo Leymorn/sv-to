@@ -3,22 +3,24 @@ interface Props {
     size?: string;
     color?: string;
     class?: string;
+    viewBox?: string;
 }
 
 export default function SvgIcon({
     path,
     size = '16px',
     color = '#121212',
+    viewBox = '0 0 24 24',
 }: Props) {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
+            viewBox={viewBox}
             width={size}
             height={size}
-            fill={color}
+            fill="none"
         >
-            <path d={path} />
+            <path d={path} fill={color} />
         </svg>
     );
 }

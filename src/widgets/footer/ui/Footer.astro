@@ -1,0 +1,20 @@
+---
+import Image from '../../../widgets/shared/ui/Image.astro';
+import Container from '../../../widgets/shared/ui/Container.astro';
+import FooterContacts from './FooterContacts.astro';
+import FooterNavigation from './FooterNavigation.astro';
+import FooterAddress from './FooterAddress.astro';
+---
+
+<footer
+    class="flex items-center justify-center w-full bg-[var(--grey-color-2)] text-white pt-5 pb-20 font-roboto font-light text-sm"
+>
+    <Container class="justify-between flex-wrap gap-5">
+        <a href="/">
+            <Image src="/logo.svg" width="87px" />
+        </a>
+        <FooterContacts />
+        <FooterNavigation />
+        <FooterAddress />
+    </Container>
+</footer>

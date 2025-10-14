@@ -1,0 +1,28 @@
+---
+import { Icon } from 'astro-icon/components';
+
+interface Props {
+    text: string;
+    prependIcon?: string;
+    appendIcon?: string;
+    iconSize?: string;
+    onClickFunction: () => void;
+}
+const {
+    text,
+    prependIcon = '',
+    appendIcon = '',
+    iconSize,
+    onClickFunction,
+} = Astro.props;
+---
+
+<div class="flex items-center gap-2">
+    {prependIcon && <Icon name={prependIcon} size={iconSize} />}
+    <button onclick={() => onClickFunction()}>
+        {text}
+    </button>
+    {appendIcon && <Icon name={appendIcon} size={iconSize} />}
+</div>
+
+<style lang="scss" scoped></style>

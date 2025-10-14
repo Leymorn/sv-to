@@ -1,0 +1,27 @@
+---
+import { Icon } from 'astro-icon/components';
+import { PHONE_CONTACTS } from '../../shared/model/contacts';
+---
+
+<div class="flex flex-col gap-3">
+    <a href="https://vk.com/svto1" class="flex items-center gap-5">
+        <Icon name="vk" size="18" class="text-main-color" />
+        vk.com/svto1
+    </a>
+    <a href="mailto:svto@mail.ru" class="flex items-center gap-5">
+        <Icon name="mail" size="18" />
+        svto@mail.ru
+    </a>
+    <a href={PHONE_CONTACTS[0].link} class="flex items-center gap-5">
+        <Icon name="phone" size="18" />
+        {PHONE_CONTACTS[0].name}
+    </a>
+    <a href={PHONE_CONTACTS[1].link} class="flex items-center gap-5">
+        <div class="w-[18px]"></div>
+        {PHONE_CONTACTS[1].name}
+    </a>
+    <a href={PHONE_CONTACTS[2].link} class="flex items-center gap-5">
+        <div class="w-[18px]"></div>
+        {PHONE_CONTACTS[2].name}
+    </a>
+</div>

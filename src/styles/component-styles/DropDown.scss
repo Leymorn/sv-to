@@ -1,44 +1,44 @@
 .drop-down {
-  position: relative;
+    position: relative;
 
-  &__title {
-    display: flex;
-    gap: 4px;
-    border: 0;
-    background-color: transparent;
-    text-decoration: none;
-    color: #000000;
-    padding: 8px;
-    font-family: var(--montserrat-font);
-    font-weight: 500;
-    font-size: 18px;
-    cursor: pointer;
-  }
-
-  &__content {
-    display: grid;
-    grid-template-rows: 0fr;
-    overflow: hidden;
-    transition: grid-template-rows 0.1s linear;
-    position: absolute;
-
-    &__list {
-      display: flex;
-      flex-direction: column;
-      min-height: 0;
-      list-style: none;
-      background-color: white;
-      padding: 10px 0;
-      width: max-content;
-      gap: 8px;
-
-      li {
+    &__title {
         display: flex;
-      }
+        gap: 4px;
+        border: 0;
+        background-color: transparent;
+        text-decoration: none;
+        color: #000000;
+        padding: 8px;
+        font-family: var(--montserrat-font);
+        font-weight: 500;
+        font-size: 18px;
+        cursor: pointer;
     }
 
-    &.show {
-      grid-template-rows: 1fr;
+    &__content {
+        display: grid;
+        grid-template-rows: 0fr;
+        overflow: hidden;
+        transition: grid-template-rows 0.1s linear;
+        position: absolute;
+
+        &__list {
+            display: flex;
+            flex-direction: column;
+            min-height: 0;
+            list-style: none;
+            background-color: white;
+            padding: 10px 0;
+            width: max-content;
+            gap: 8px;
+
+            li {
+                display: flex;
+            }
+        }
+
+        &.show {
+            grid-template-rows: 1fr;
+        }
     }
-  }
 }
