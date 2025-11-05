@@ -2,26 +2,15 @@
 import { defineConfig } from 'astro/config';
 
 import react from '@astrojs/react';
-import tailwind from '@astrojs/tailwind';
-
 import icon from 'astro-icon';
+
+import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
     vite: {
-        resolve: {
-            alias: {
-                '@': new URL('./src', import.meta.url).pathname,
-            },
-        },
-        css: {
-            preprocessorOptions: {
-                scss: {
-                    additionalData: `@use "/src/styles/_main.scss" as *;`,
-                },
-            },
-        },
+        plugins: [tailwindcss()],
     },
 
-    integrations: [react(), tailwind(), icon()],
+    integrations: [react(), icon()],
 });

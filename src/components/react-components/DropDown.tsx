@@ -1,15 +1,19 @@
 import { useState } from 'react';
 import SvgIcon from '../../widgets/shared/ui/SvgIcon';
 import { mdiMenuDown, mdiMenuUp } from '@mdi/js';
-import { type IListItem } from '../../entities/ListItem/model/types';
 import ListItems from './ListItems';
 
 interface Props {
     title: string;
-    items: IListItem[];
+    items: {
+        title: string;
+        link?: string;
+        svgIconPath?: string;
+        svgIconSize?: string;
+    }[];
 }
 
-export default function DropDown({ title, items }: Props): ReactElement {
+export default function DropDown({ title, items }: Props): React.ReactElement {
     const [isOpen, setIsOpen] = useState(false);
 
     return (

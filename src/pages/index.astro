@@ -1,13 +1,69 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Container from '../widgets/shared/ui/Container.astro';
-import EmblaCarousel from '../widgets/shared/ui/carousel/Carousel.tsx';
+import Carousel from '../widgets/shared/ui/carousel/Carousel.tsx';
+import CompanyProjects from '@/widgets/pages/index/ui/CompanyProjects.tsx';
+import CompanyAdvantages from '@/widgets/pages/index/ui/CompanyAdvantages.tsx';
+import CatalogsAndPrices from '@/widgets/pages/index/ui/CatalogsAndPrices.tsx';
+import Services from '@/widgets/pages/index/ui/Services.tsx';
+import Link from '@/widgets/shared/ui/Link';
+import Clients from '@/widgets/pages/index/ui/Clients.tsx';
+import Contacts from '@/widgets/pages/index/ui/Contacts.astro';
 
 const banners = ['/banner_0.png', '/banner_1.png', '/banner_2.png'];
+const articles = [
+    {
+        title: 'Кондитерские магазины — тонкости открытия и оборудования',
+        description:
+            'Сладости — товар, который актуален в любой время года, он пользуется спросом у взрослых и детей.',
+        image: '/articles/konditer.webp',
+    },
+    {
+        title: 'Варианты использования экономпанелей',
+        description:
+            'Главным достоинством экономпанелей является универсальность их применения.',
+        image: '/articles/ekonompaneli.webp',
+    },
+    {
+        title: 'Организация и техническое оснащение аптеки',
+        description:
+            'Организация и техническое оснащение аптеки — сложная задача, требующая внимательного подхода и учета многих факторов.',
+        image: '/articles/apteki.webp',
+    },
+    {
+        title: 'Кондитерские магазины — тонкости открытия и оборудования',
+        description:
+            'Сладости — товар, который актуален в любой время года, он пользуется спросом у взрослых и детей.',
+        image: '/articles/konditer.webp',
+    },
+];
 ---
 
 <Layout title="Welcome to Astro.">
-    <Container>
-        <EmblaCarousel client:only="true" slides={banners} slideSize="100%" />
+    <Container class="flex-col">
+        <Carousel
+            client:only="react"
+            slideHeight="440px"
+            slideWidth="100%"
+            images={banners}
+            showLink={true}
+        />
+        <CompanyProjects />
+        <CompanyAdvantages />
+        <CatalogsAndPrices />
+        <Services />
+        <div class="w-full flex justify-between pb-5 pt-10">
+            <span class="text-2xl font-semibold">Полезные статьи</span>
+            <Link type="grey" href="/" text="Все статьи" />
+        </div>
+        <Carousel
+            client:only="react"
+            slideHeight="440px"
+            slideWidth="400px"
+            articles={articles}
+            gap="5"
+        />
+        <Clients />
+        <Contacts />
     </Container>
 </Layout>

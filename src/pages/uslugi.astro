@@ -1,0 +1,12 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Container from '../widgets/shared/ui/Container.astro';
+import { ServicesList } from '@/widgets/pages/usligi';
+---
+
+<Layout title="Services">
+    <Container class="flex-col">
+        <h1 class="text-[24px] font-semibold pb-8 text-center">Услуги</h1>
+        <ServicesList />
+    </Container>
+</Layout>

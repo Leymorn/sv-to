@@ -1,23 +1,39 @@
 ---
-import HeaderContacts from './HeaderContacts.astro';
-import Image from '../../../widgets/shared/ui/Image.astro';
+import HeaderContacts from './HeaderContacts';
+import Image from '../../shared/ui/Image';
 import Container from '../../../widgets/shared/ui/Container.astro';
-import HeaderNavigation from './HeaderNavigation.astro';
+import HeaderNavigation from './HeaderNavigation';
+import LinkWithImage from '@/widgets/shared/ui/LinkWithImage';
 ---
 
 <header class="w-full flex flex-col items-center">
-    <HeaderContacts />
+    <div
+        class="p-5 bg-main-color-3 w-full text-lg font-roboto font-normal leading-[100%]"
+    >
+        <Container class="grid-cols-1-xs-2-lg-4 m-auto gap-5">
+            <HeaderContacts />
+        </Container>
+    </div>
     <Container class="gap-5 py-5">
-        <a href="/" class="header__logo">
-            <Image src="/logo.svg" width="87px" />
-        </a>
-        <div class="flex font-roboto items-center gap-[14px]">
-            <span class="text-[100px] font-semibold leading-[100%]">СВ</span>
+        <a
+            href="/"
+            class="flex font-roboto items-center justify-center gap-[14px] text-[100px] font-semibold leading-[100%]"
+        >
+            <Image src="/logo.svg" width="87px" classList="min-w-[87px]" />
+            <span class="relative bottom-1">СВ</span>
             <div class="flex flex-col gap-2 text-3xl font-light">
-                <span>ТОРГОВОЕ</span>
+                ТОРГОВОЕ
                 <span>ОБОРУДОВАНИЕ</span>
             </div>
-        </div>
+        </a>
     </Container>
-    <HeaderNavigation />
+    <nav
+        class="flex items-center justify-center border-y-4 border-main-color-2 w-full py-4"
+    >
+        <Container
+            class="justify-between font-medium text-base font-montserrat overflow-x-auto gap-10 whitespace-nowrap scrollbar-color-main-color-3 py-5"
+        >
+            <HeaderNavigation />
+        </Container>
+    </nav>
 </header>

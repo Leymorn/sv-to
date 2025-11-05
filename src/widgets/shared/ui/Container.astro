@@ -6,8 +6,6 @@ interface Props {
 const { class: classList = '' } = Astro.props;
 ---
 
-<div
-    class={`flex items-center w-full max-w-[var(--max-screen)] px-5 ${classList}`}
->
+<div class={`flex w-full max-w-[var(--breakpoint-xl)] px-5 ${classList}`}>
     <slot />
 </div>

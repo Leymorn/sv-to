@@ -1,0 +1,43 @@
+---
+import Image from '@/widgets/shared/ui/Image';
+import { Icon } from 'astro-icon/components';
+import ContactsPhones from './ContactsPhones.tsx';
+---
+
+<>
+    <span class="text-[24px] font-semibold w-full text-center pb-13 pt-20">
+        Давайте быть ближе!
+    </span>
+    <div class="w-full grid grid-cols-1 xs:grid-cols-2 items-center gap-5">
+        <div
+            class="w-full flex flex-col items-center h-full gap-4 border border-main-color rounded-[20px] py-10 text-center"
+        >
+            Подписывайтесь на новости
+            <Image src="/vk-phone.webp" alt="vk" />
+            <a
+                href="https://vk.com/svto1"
+                class="flex items-center justify-center gap-6 bg-[#4C75A3] leading-[100%] text-white rounded-[10px] px-7 py-2 font-light font-roboto"
+            >
+                <Icon name="vk" size="36" />
+                Подписаться
+            </a>
+        </div>
+        <div class="w-full flex flex-col items-center h-full gap-7">
+            <div
+                class="w-full flex flex-col items-center gap-4 border border-main-color rounded-[20px] py-10"
+            >
+                Для звонков
+                <ContactsPhones />
+            </div>
+
+            <div
+                class="w-full flex flex-col items-center gap-4 border border-main-color rounded-[20px] py-10"
+            >
+                Для писем
+                <a href="mailto:svto@mail.ru" class="flex items-center gap-6">
+                    svto@mail.ru
+                </a>
+            </div>
+        </div>
+    </div>
+</>

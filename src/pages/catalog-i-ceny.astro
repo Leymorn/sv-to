@@ -1,0 +1,28 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Container from '../widgets/shared/ui/Container.astro';
+import { CatalogList } from '@/widgets/pages/catalogi-i-ceni';
+---
+
+<Layout title="Catalog and Prices">
+    <Container class="flex-col">
+        <h1 class="pb-8 text-[24px] font-semibold">Каталоги и цены</h1>
+        <div class="flex flex-col md:flex-row gap-5 pb-12">
+            <span>
+                Основное направление деятельности нашей компании —
+                <a href="/" class="text-blue-color underline">
+                    производство торгового оборудования (мебели)
+                </a>
+                на заказ. Также мы занимаемся продажей разных торговых систем
+                <br /> и элементов оборудования для магазинов.
+            </span>
+            <span
+                class="border border-main-color rounded-[20px] p-5 lg:px-13 lg:py-7 italic"
+            >
+                В нашей компании действуют скидки для дилеров на мелкий и
+                крупный опт</span
+            >
+        </div>
+        <CatalogList />
+    </Container>
+</Layout>

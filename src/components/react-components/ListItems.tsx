@@ -1,11 +1,15 @@
 import SvgIcon from '../../widgets/shared/ui/SvgIcon';
-import { type IListItem } from '../../entities/ListItem/model/types';
 
 interface Props {
-    items: IListItem[];
+    items: {
+        title: string;
+        link?: string;
+        svgIconPath?: string;
+        svgIconSize?: string;
+    }[];
 }
 
-export default function ListItems({ items }: Props): ReactElement {
+export default function ListItems({ items }: Props): React.ReactElement {
     return (
         <>
             {items.map((item, index) => {

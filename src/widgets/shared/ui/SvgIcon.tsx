@@ -2,7 +2,6 @@ interface Props {
     path: string;
     size?: string;
     color?: string;
-    class?: string;
     viewBox?: string;
 }
 
