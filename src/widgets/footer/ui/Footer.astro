@@ -1,9 +1,9 @@
 ---
 import Image from '../../shared/ui/Image';
-import Container from '../../../widgets/shared/ui/Container.astro';
-import FooterContacts from './FooterContacts.astro';
+import Container from '@/widgets/shared/ui/Container.astro';
 import FooterNavigation from './FooterNavigation';
 import FooterAddress from './FooterAddress.astro';
+import Contacts from '@/widgets/shared/ui/contacts/Contacts.astro';
 ---
 
 <footer
@@ -11,9 +11,12 @@ import FooterAddress from './FooterAddress.astro';
 >
     <Container class="justify-between flex-wrap gap-5 mx-auto">
         <a class="w-full sm:w-auto" href="/">
-            <Image src="/logo.svg" width="87px" />
+            <Image src="/logo.svg" classList="w-[87px]" />
         </a>
-        <FooterContacts />
+        <div class="flex flex-col gap-3">
+            <Contacts />
+        </div>
+
         <FooterNavigation />
         <FooterAddress />
     </Container>

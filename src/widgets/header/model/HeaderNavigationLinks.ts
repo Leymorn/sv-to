@@ -2,7 +2,7 @@ import { ROUTES } from '@/widgets/shared/router/routes';
 
 export const HEADER_NAVIGATION_LINKS = [
     {
-        url: '/',
+        url: ROUTES.ABOUT,
         text: 'О компании',
     },
     {
@@ -14,7 +14,7 @@ export const HEADER_NAVIGATION_LINKS = [
         text: 'Каталог и цены',
     },
     {
-        url: '/',
+        url: ROUTES.TORGOVAYA_MEBEL,
         text: 'Торговая мебель',
     },
     {
@@ -22,11 +22,11 @@ export const HEADER_NAVIGATION_LINKS = [
         text: 'Проекты  ',
     },
     {
-        url: '/',
+        url: ROUTES.PROIZVODSTVO,
         text: 'Производство',
     },
     {
-        url: '/',
+        url: ROUTES.KONTAKTY,
         text: 'Контакты',
     },
 ];

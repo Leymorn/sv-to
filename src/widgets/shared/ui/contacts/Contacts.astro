@@ -1,0 +1,51 @@
+---
+import { Icon } from 'astro-icon/components';
+import {
+    PHONE_CONTACTS,
+    EMAIL,
+    SOCIAL_LINKS,
+} from '@/widgets/shared/ui/contacts/contacts';
+import Link from '@/widgets/shared/ui/Link';
+---
+
+<>
+    {
+        PHONE_CONTACTS.map((phone, index) => (
+            <Link
+                href={phone.href}
+                key={index}
+                text={phone.name}
+                type="flat"
+                classList="flex items-center gap-3 "
+            >
+                {index === 0 ? (
+                    <Icon name="phone" size="20" />
+                ) : (
+                    <div class="w-[20px]" />
+                )}
+            </Link>
+        ))
+    }
+    <Link
+        href={`mailto:${EMAIL}`}
+        text={EMAIL}
+        type="flat"
+        classList="flex items-center gap-3"
+    >
+        <Icon name="mail" size="20" />
+    </Link>
+    {
+        SOCIAL_LINKS.map((socialLink, index) => (
+            <Link
+                key={index}
+                href={socialLink.href}
+                text={socialLink.label}
+                type="flat"
+                classList="flex items-center gap-3"
+                target="_blank"
+            >
+                <Icon name="vk" size="20" />
+            </Link>
+        ))
+    }
+</>

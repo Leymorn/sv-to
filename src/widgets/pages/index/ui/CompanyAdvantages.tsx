@@ -13,8 +13,7 @@ export default function CompanyAdvantages() {
                     >
                         <Image
                             src={advantage.imageUrl}
-                            width="56px"
-                            height="59px"
+                            classList="w-[56px] h-[59px]"
                         />
                         <div className="w-full text-center">
                             {advantage.text}

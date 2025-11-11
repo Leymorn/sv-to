@@ -1,0 +1,48 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Container from '@/widgets/shared/ui/Container.astro';
+import { AboutArticle } from '@/widgets/pages/about';
+import Carousel from '@/widgets/shared/ui/carousel/Carousel.tsx';
+import CategoryRibbon from '@/widgets/shared/ui/category-ribbon/CategoryRibbon.tsx';
+import { ROUTES } from '@/widgets/shared/router/routes';
+import { CATALOG_LINKS_WITH_IMAGES } from '@/widgets/shared/model/CatalogLinksWithImages';
+import { SERVICES_LIST_WITH_IMAGES } from '@/widgets/shared/model/ServicesListWithImages';
+
+const images = [
+    '/banner_0.png',
+    '/banner_1.png',
+    '/banner_2.png',
+    '/banner_0.png',
+    '/banner_1.png',
+    '/banner_2.png',
+];
+---
+
+<Layout title="About">
+    <Container class="flex-col">
+        <h1 class="text-lg md:text-2xl font-semibold md:mb-8 mb-5">
+            О компании
+        </h1>
+        <AboutArticle />
+        <h2 class="text-lg md:text-2xl font-semibold md:my-11 my-5 text-center">
+            Реализованные проекты
+        </h2>
+        <Carousel
+            client:only="react"
+            slideHeight="500px"
+            slideWidth="400px"
+            images={images}
+            gap="5"
+        />
+        <CategoryRibbon
+            title="Каталоги и цены"
+            href={ROUTES.CATALOG_I_CENY}
+            items={CATALOG_LINKS_WITH_IMAGES.slice(0, 4)}
+        />
+        <CategoryRibbon
+            title="Услуги"
+            href={ROUTES.USLUGI}
+            items={SERVICES_LIST_WITH_IMAGES.slice(0, 4)}
+        />
+    </Container>
+</Layout>

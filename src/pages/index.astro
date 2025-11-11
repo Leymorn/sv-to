@@ -4,11 +4,13 @@ import Container from '../widgets/shared/ui/Container.astro';
 import Carousel from '../widgets/shared/ui/carousel/Carousel.tsx';
 import CompanyProjects from '@/widgets/pages/index/ui/CompanyProjects.tsx';
 import CompanyAdvantages from '@/widgets/pages/index/ui/CompanyAdvantages.tsx';
-import CatalogsAndPrices from '@/widgets/pages/index/ui/CatalogsAndPrices.tsx';
-import Services from '@/widgets/pages/index/ui/Services.tsx';
+import CategoryRibbon from '@/widgets/shared/ui/category-ribbon/CategoryRibbon.tsx';
 import Link from '@/widgets/shared/ui/Link';
 import Clients from '@/widgets/pages/index/ui/Clients.tsx';
 import Contacts from '@/widgets/pages/index/ui/Contacts.astro';
+import { ROUTES } from '@/widgets/shared/router/routes';
+import { CATALOG_LINKS_WITH_IMAGES } from '@/widgets/shared/model/CatalogLinksWithImages';
+import { SERVICES_LIST_WITH_IMAGES } from '@/widgets/shared/model/ServicesListWithImages';
 
 const banners = ['/banner_0.png', '/banner_1.png', '/banner_2.png'];
 const articles = [
@@ -42,7 +44,7 @@ const articles = [
 <Layout title="Welcome to Astro.">
     <Container class="flex-col">
         <Carousel
-            client:only="react"
+            client:load
             slideHeight="440px"
             slideWidth="100%"
             images={banners}
@@ -50,10 +52,20 @@ const articles = [
         />
         <CompanyProjects />
         <CompanyAdvantages />
-        <CatalogsAndPrices />
-        <Services />
+        <CategoryRibbon
+            title="Каталоги и цены"
+            href={ROUTES.CATALOG_I_CENY}
+            items={CATALOG_LINKS_WITH_IMAGES.slice(0, 4)}
+        />
+        <CategoryRibbon
+            title="Услуги"
+            href={ROUTES.USLUGI}
+            items={SERVICES_LIST_WITH_IMAGES.slice(0, 4)}
+        />
         <div class="w-full flex justify-between pb-5 pt-10">
-            <span class="text-2xl font-semibold">Полезные статьи</span>
+            <span class="text-lg md:text-2xl font-semibold"
+                >Полезные статьи</span
+            >
             <Link type="grey" href="/" text="Все статьи" />
         </div>
         <Carousel

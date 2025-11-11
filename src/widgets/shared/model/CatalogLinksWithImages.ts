@@ -1,3 +1,5 @@
+import { ROUTES } from '../router/routes';
+
 export const CATALOG_LINKS_WITH_IMAGES = [
     {
         imageSrc: '/catalog/torgovaya-mebel.webp',
@@ -27,7 +29,7 @@ export const CATALOG_LINKS_WITH_IMAGES = [
     {
         imageSrc: '/catalog/fasadi-mebelnie.webp',
         text: 'Фасады мебельные',
-        href: '/',
+        href: ROUTES.MEBELNYE_FASADY,
     },
     {
         imageSrc: '/catalog/primerochnie.png',

@@ -1,0 +1,48 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Container from '@/widgets/shared/ui/Container.astro';
+import Image from '@/widgets/shared/ui/Image';
+import Link from '@/widgets/shared/ui/Link';
+import {
+    InfoBlock,
+    ImagesBlock,
+    MaterialsBlock,
+    LogisticsBlock,
+} from '@/widgets/pages/proizvodstvo';
+---
+
+<Layout title="Proizvodstvo">
+    <Container class="flex-col">
+        <h1 class="text-lg sm:text-2xl font-semibold md:mb-8 mb-4 text-center">
+            Производство торгового оборудования
+        </h1>
+        <p class="text-center text-lg md:text-xl md:mb-8 mb-4">
+            Собственный цех 1200 м², полный цикл: проектирование → раскрой →
+            кромка → ЧПУ → покраска → сборка → монтаж
+        </p>
+        <Image
+            src="/proizvodstvo/zeh.jpg"
+            alt="Производство торгового оборудования"
+            classList="w-full md:h-[485px] md:mb-8 mb-4"
+        />
+        <div class="flex gap-5 justify-center md:mb-20 mb-10">
+            <Link
+                type="default"
+                href="/"
+                classList="md:text-lg text-base text-center"
+                text="Записаться на визит в цех"
+            />
+            <Link
+                type="outline"
+                href="/"
+                classList="md:text-lg text-base text-center"
+                text="Рассчитать стоимость"
+            />
+        </div>
+        <InfoBlock />
+        <ImagesBlock />
+        <MaterialsBlock />
+        <LogisticsBlock />
+        <!-- TODO: добавить блок частых вопросов и записи на экскурсию (если надо) -->
+    </Container>
+</Layout>

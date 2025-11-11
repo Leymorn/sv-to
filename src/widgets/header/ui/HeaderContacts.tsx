@@ -1,4 +1,4 @@
-import { PHONE_CONTACTS } from '../../shared/model/contacts';
+import { PHONE_CONTACTS } from '../../shared/ui/contacts/contacts';
 
 export default function HeaderContacts() {
     return (

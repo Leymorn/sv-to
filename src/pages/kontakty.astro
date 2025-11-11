@@ -1,0 +1,37 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Container from '@/widgets/shared/ui/Container.astro';
+import {
+    ContactPeopleBlock,
+    AddressBlock,
+    LegalAddressBlock,
+    WorkScheduleBlock,
+    DeliverySection,
+    MapBlock,
+} from '@/widgets/pages/kontakty';
+import Contacts from '@/widgets/shared/ui/contacts/Contacts.astro';
+---
+
+<Layout title="Контакты">
+    <Container class="flex-col gap-12 md:gap-16">
+        <h1 class="text-[24px] md:text-[32px] font-semibold">
+            Контактная информация
+        </h1>
+        <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[250px_350px_1fr] gap-5"
+        >
+            <article class="flex flex-col gap-2">
+                <h3 class="text-lg md:text-xl font-semibold pb-4 md:pb-8">
+                    Контакты
+                </h3>
+                <Contacts />
+            </article>
+            <AddressBlock />
+            <MapBlock />
+            <WorkScheduleBlock />
+            <LegalAddressBlock />
+            <ContactPeopleBlock />
+        </div>
+        <DeliverySection />
+    </Container>
+</Layout>

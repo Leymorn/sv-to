@@ -1,4 +1,4 @@
-import { PHONE_CONTACTS } from '@/widgets/shared/model/contacts';
+import { PHONE_CONTACTS } from '@/widgets/shared/ui/contacts/contacts';
 
 export default function ContactsPhones() {
     return (

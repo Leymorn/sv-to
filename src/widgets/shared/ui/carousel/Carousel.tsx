@@ -13,6 +13,7 @@ type PropType = {
     showLink?: boolean;
     articles?: Article[];
     gap?: string;
+    loop?: boolean;
 };
 
 const Carousel: React.FC<PropType> = (props) => {
@@ -23,9 +24,22 @@ const Carousel: React.FC<PropType> = (props) => {
         images,
         showLink,
         articles,
-        gap,
+        gap = '5',
+        loop,
     } = props;
-    const [emblaRef, emblaApi] = useEmblaCarousel(options);
+
+    const emblaOptions = React.useMemo<EmblaOptionsType | undefined>(() => {
+        if (loop === undefined) {
+            return options;
+        }
+
+        return {
+            ...(options ?? {}),
+            loop,
+        };
+    }, [options, loop]);
+
+    const [emblaRef, emblaApi] = useEmblaCarousel(emblaOptions);
 
     const {
         prevBtnDisabled,
@@ -40,7 +54,7 @@ const Carousel: React.FC<PropType> = (props) => {
         >
             <div className="overflow-hidden" ref={emblaRef}>
                 <div
-                    className={`flex touch-pinch-zoom touch-pan-y ${gap ? `gap-${gap}` : ''}`}
+                    className={`flex touch-pinch-zoom touch-pan-y ${!loop ? `gap-${gap}` : ''}`}
                 >
                     {images && images.length > 0 ? (
                         images.map((image, index) => (
@@ -48,7 +62,7 @@ const Carousel: React.FC<PropType> = (props) => {
                                 key={index}
                                 src={image}
                                 alt={`Slide ${index + 1}`}
-                                className="w-full h-full object-cover min-w-0 transform-[translate3d(0, 0, 0)]"
+                                className={`w-full h-full object-cover min-w-0 transform-[translate3d(0, 0, 0)] ${loop ? `pl-${gap}` : ''}`}
                                 style={{ flex: `0 0 ${slideWidth}` }}
                             />
                         ))

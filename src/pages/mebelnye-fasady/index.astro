@@ -1,0 +1,29 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Container from '@/widgets/shared/ui/Container.astro';
+import {
+    AdditionalServicesSection,
+    FacadeTypesSection,
+    FasadiPricesSection,
+    FilesLinks,
+    MebelnyeFasadySubpagesList,
+    PosibleFasades,
+} from '@/widgets/pages/mebelnye-fasady';
+---
+
+<Layout title="Mebelnye Fasady">
+    <Container class="flex-col">
+        <h1 class="text-[24px] font-semibold mb-8">Мебельные фасады</h1>
+
+        <span class="font-montserrat mb-8">
+            Мы осуществляем производство мебельных фасадов для кухни, домашней
+            мебели, торгового оборудования и прочего.</span
+        >
+        <MebelnyeFasadySubpagesList />
+        <PosibleFasades />
+        <FasadiPricesSection />
+        <AdditionalServicesSection />
+        <FilesLinks />
+        <FacadeTypesSection />
+    </Container>
+</Layout>
