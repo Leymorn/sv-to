@@ -1,0 +1,27 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Container from '@/shared/ui/Container.astro';
+import {
+    SistemiTrubBlock,
+    SistemiPerfStoek,
+    ProcheeBlock,
+} from '@/widgets/pages/trubi-i-stoyki';
+---
+
+<Layout title="Трубы и стойки">
+    <Container class="flex-col">
+        <h1 class="text-xl md:text-2xl font-semibold md:mb-6 mb-3 text-center">
+            Трубы и стойки
+        </h1>
+        <p
+            class="text-center text-base mx-auto max-w-[1062px] border border-main-color rounded-[20px] p-2 italic md:mb-20 mb-10"
+        >
+            На складе всегда доступны элементы всех систем – вы можете
+            приобрести любое количество. Наши специалисты при необходимости
+            помогут выполнить сборку оборудования из выбранных компонентов.
+        </p>
+        <SistemiTrubBlock />
+        <SistemiPerfStoek />
+        <!-- <ProcheeBlock />-->
+    </Container>
+</Layout>

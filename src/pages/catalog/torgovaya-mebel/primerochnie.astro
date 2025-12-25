@@ -1,0 +1,42 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Container from '@/shared/ui/Container.astro';
+import Image from '@/shared/ui/Image';
+import Link from '@/shared/ui/Link';
+import { ROUTES } from '@/shared/router/routes';
+import { PrimerochnieProductsGrid } from '@/widgets/pages/primerochnie';
+---
+
+<Layout title="Primerochnie">
+    <Container class="flex-col">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10 md:mb-20">
+            <div class="text-lg md:text-xl font-medium flex flex-col gap-5">
+                <h1 class="text-xl md:text-2xl font-semibold">Примерочные</h1>
+                <br />
+                В данном разделе каталога представлены примеры моделей примерочных
+                для магазинов одежды – на основе из металлических хромированных труб
+                системы Joker диаметром 25 мм. Открытые конструкции предполагают
+                использование шторки, также представлены модели с перегородками из
+                ЛДСП.
+            </div>
+            <Image
+                src="/primerochnie/primerochnie-index.png"
+                alt="Primerochnie"
+                classList="w-full h-full object-cover"
+            />
+        </div>
+        <PrimerochnieProductsGrid client:load />
+        <span
+            class="text-base border border-main-color rounded-[20px] p-5 italic"
+        >
+            Варианты примерочных, представленные в каталоге и прайс-листах,
+            являются ознакомительными образцами. Вы можете выбрать готовую
+            модель или заказать примерочную по индивидуальному проекту —
+            самостоятельно или с помощью нашего дизайнера. Стоимость конструкции
+            рассчитывается индивидуально и зависит от размера, длины труб,
+            количества крепежей и типа перегородок.
+            <br /> При необходимости перегородки из ДСП можно заменить на экономпанель
+            для более рационального использования торгового пространства.
+        </span>
+    </Container>
+</Layout>

@@ -1,0 +1,45 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Container from '@/shared/ui/Container.astro';
+import LinkWithImage from '@/shared/ui/LinkWithImage.tsx';
+import { MANEKENY } from '@/widgets/pages/manekeny/model/manekeny';
+import Image from '@/shared/ui/Image';
+import Link from '@/shared/ui/Link';
+import { ROUTES } from '@/shared/router/routes';
+---
+
+<Layout title="Манекены">
+    <Container class="flex-col">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10 md:mb-20">
+            <div class="flex flex-col gap-5">
+                <h1 class="text-xl md:text-2xl font-semibold">Манекены</h1>
+                Манекены — мощный инструмент продаж.Они показывают одежду живо и
+                объёмно, помогают увидеть посадку и стиль, притягивают внимание витрины
+                и усиливают желание примерить. Грамотно подобранные манекены делают
+                торговое пространство профессиональным, привлекательным и продающим.
+            </div>
+            <Image
+                src="/manekeny/manekeny-index.png"
+                alt="Манекены"
+                classList="w-full"
+            />
+        </div>
+        <p class="text-lg md:text-xl font-medium text-center mb-4 md:mb-8">
+            Каталог
+        </p>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-5 mb-10 md:mb-20">
+            {
+                MANEKENY.map((item) => (
+                    <LinkWithImage
+                        key={item.text}
+                        text={item.text}
+                        href={item.href}
+                        imageSrc={item.imageSrc}
+                        imageWrapperClassList="h-[307px]"
+                        imageClassList=""
+                    />
+                ))
+            }
+        </div>
+    </Container>
+</Layout>

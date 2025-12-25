@@ -1,0 +1,20 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Container from '@/shared/ui/Container.astro';
+import { MasterGrid } from '@/widgets/pages/trubi-i-stoyki';
+---
+
+<Layout title="Система труб Master">
+    <Container class="flex-col">
+        <h1 class="text-xl md:text-2xl font-semibold md:mb-6 mb-3 text-center">
+            Система труб Master
+        </h1>
+        <p class="text-center text-base mx-auto max-w-[820px] md:mb-10 mb-6">
+            Трубы Master квадратного сечения длиной 3 м и набор совместимых
+            крепежей позволяют собирать витрины, островные и стендовые
+            конструкции. Все элементы доступны в двух вариантах покрытия:
+            хром&nbsp;(ch) и satin&nbsp;(sat).
+        </p>
+        <MasterGrid />
+    </Container>
+</Layout>

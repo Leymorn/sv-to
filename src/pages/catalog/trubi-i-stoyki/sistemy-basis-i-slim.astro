@@ -1,0 +1,16 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Container from '@/shared/ui/Container.astro';
+import { BasisGrid } from '@/widgets/pages/trubi-i-stoyki';
+---
+
+<Layout title="Системы Basis и Slim">
+    <Container class="flex-col">
+        <h1
+            class="text-xl md:text-2xl font-semibold md:mb-20 mb-10 text-center"
+        >
+            Системы Basis и Slim (Базис и Слим)
+        </h1>
+        <BasisGrid client:load />
+    </Container>
+</Layout>

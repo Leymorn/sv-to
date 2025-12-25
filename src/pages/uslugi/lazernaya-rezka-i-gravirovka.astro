@@ -1,0 +1,60 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Container from '@/shared/ui/Container.astro';
+import Carousel from '@/shared/ui/carousel/Carousel.tsx';
+import {
+    ORGSTEKLO_PROJECTS_IMAGES,
+    FANERA_PROJECTS_IMAGES,
+    ORGSTEKLO_PRICES,
+    FANERA_PRICES,
+    PricesBlock,
+} from '@/widgets/pages/lazernaya-rezka-i-gravirovka';
+---
+
+<Layout title="Lazernaya Rezka I Gravirovka">
+    <Container class="flex-col">
+        <h1 class="md:text-2xl text-xl font-semibold md:mb-8 mb-4 text-center">
+            Лазерная резка и гравировка
+        </h1>
+        <h2 class="md:text-xl text-lg font-semibold md:mb-10 mb-5 text-center">
+            Оргстекло (акрил), плексиглас
+        </h2>
+        <Carousel
+            carouselClassList="h-[400px] md:mb-20 mb-10"
+            images={ORGSTEKLO_PROJECTS_IMAGES}
+            options={{ loop: true }}
+            client:load
+            slideWidth="40%"
+        />
+        <PricesBlock prices={ORGSTEKLO_PRICES} />
+        <h2 class="md:text-2xl text-xl font-semibold md:mb-8 mb-4 text-center">
+            Фанера
+        </h2>
+        <Carousel
+            carouselClassList="h-[400px] md:mb-20 mb-10"
+            images={FANERA_PROJECTS_IMAGES}
+            options={{ loop: true }}
+            client:load
+            slideWidth="40%"
+        />
+        <PricesBlock prices={FANERA_PRICES} />
+        <p class="text-lg md:text-xl font-medium md:mb-8 mb-4">Подробнее</p>
+        <ul class="list-disc list-inside">
+            <li>Рабочее поле лазерного станка 3000 х 2000 мм</li>
+            <li>Работаем со своим материалом и с материалом заказчика</li>
+            <li>Стоимость заказа зависит от сложности и от объёма работ</li>
+            <li>
+                Режем материалы: оргстекло (акрил), фанера, ХДФ, пробка, картон,
+                бумага, ПЭТ, кожа, фетр и др.
+            </li>
+            <li>
+                Гравировка дерева, фанеры, стекла, зеркала, кожи, оргстекла,
+                сувениров
+            </li>
+            <li>
+                Также мы можем затонировать и окрасить изделия из фанеры и МДФ,
+                и осуществить шлифовку изделий
+            </li>
+        </ul>
+    </Container>
+</Layout>

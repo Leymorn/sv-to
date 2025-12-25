@@ -1,0 +1,15 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Container from '@/shared/ui/Container.astro';
+import { PvhFilmsBlock } from '@/widgets/pages/mebelnye-fasady';
+---
+
+<Layout title="Пленки ПВХ для фасадов">
+    <Container class="flex-col">
+        <h1 class="text-xl md:text-2xl font-semibold md:mb-8 mb-4">
+            Каталог пленок ПВХ
+        </h1>
+
+        <PvhFilmsBlock client:load />
+    </Container>
+</Layout>

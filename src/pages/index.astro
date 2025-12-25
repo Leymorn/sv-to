@@ -1,16 +1,27 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Container from '../widgets/shared/ui/Container.astro';
-import Carousel from '../widgets/shared/ui/carousel/Carousel.tsx';
+import Container from '../shared/ui/Container.astro';
+import Carousel from '../shared/ui/carousel/Carousel.tsx';
 import CompanyProjects from '@/widgets/pages/index/ui/CompanyProjects.tsx';
 import CompanyAdvantages from '@/widgets/pages/index/ui/CompanyAdvantages.tsx';
-import CategoryRibbon from '@/widgets/shared/ui/category-ribbon/CategoryRibbon.tsx';
-import Link from '@/widgets/shared/ui/Link';
+import CategoryRibbon from '@/shared/ui/category-ribbon/CategoryRibbon.tsx';
+import Link from '@/shared/ui/Link';
 import Clients from '@/widgets/pages/index/ui/Clients.tsx';
 import Contacts from '@/widgets/pages/index/ui/Contacts.astro';
-import { ROUTES } from '@/widgets/shared/router/routes';
-import { CATALOG_LINKS_WITH_IMAGES } from '@/widgets/shared/model/CatalogLinksWithImages';
-import { SERVICES_LIST_WITH_IMAGES } from '@/widgets/shared/model/ServicesListWithImages';
+import { ROUTES } from '@/shared/router/routes';
+import { CATALOG_LINKS_WITH_IMAGES } from '@/shared/model/CatalogLinksWithImages';
+import { SERVICES_LIST_WITH_IMAGES } from '@/shared/model/ServicesListWithImages';
+import type { SeoMetadata } from '@/shared/model/SeoMetadata';
+
+const seo: SeoMetadata = {
+    title: '"СВ" Торговое оборудование',
+    description:
+        'Производство и продажа торгового оборудования: манекены, витрины, стеллажи, экономпанели, системы труб и стоек. Качественное торговое оборудование для магазинов.',
+    image: '/banner_0.png',
+    imageAlt: '"СВ" Торговое оборудование',
+    keywords:
+        'торговое оборудование, манекены, витрины, стеллажи, экономпанели, торговое оборудование для магазинов',
+};
 
 const banners = ['/banner_0.png', '/banner_1.png', '/banner_2.png'];
 const articles = [
@@ -41,36 +52,37 @@ const articles = [
 ];
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title='"СВ" Торговое оборудование' seo={seo}>
     <Container class="flex-col">
         <Carousel
             client:load
-            slideHeight="440px"
+            carouselClassList="h-[440px]"
             slideWidth="100%"
             images={banners}
             showLink={true}
+            options={{ loop: true }}
         />
-        <CompanyProjects />
+        <!--<CompanyProjects /> -->
         <CompanyAdvantages />
         <CategoryRibbon
-            title="Каталоги и цены"
-            href={ROUTES.CATALOG_I_CENY}
+            title="Каталог"
+            href={ROUTES.CATALOG.INDEX}
             items={CATALOG_LINKS_WITH_IMAGES.slice(0, 4)}
         />
         <CategoryRibbon
             title="Услуги"
-            href={ROUTES.USLUGI}
+            href={ROUTES.USLUGI.INDEX}
             items={SERVICES_LIST_WITH_IMAGES.slice(0, 4)}
         />
         <div class="w-full flex justify-between pb-5 pt-10">
             <span class="text-lg md:text-2xl font-semibold"
                 >Полезные статьи</span
             >
-            <Link type="grey" href="/" text="Все статьи" />
+            <Link type="gray" href="/" text="Все статьи" />
         </div>
         <Carousel
             client:only="react"
-            slideHeight="440px"
+            carouselClassList="h-[306px]"
             slideWidth="400px"
             articles={articles}
             gap="5"

@@ -1,12 +1,12 @@
 ---
 import Layout from '@/layouts/Layout.astro';
-import Container from '@/widgets/shared/ui/Container.astro';
+import Container from '@/shared/ui/Container.astro';
 import { AboutArticle } from '@/widgets/pages/about';
-import Carousel from '@/widgets/shared/ui/carousel/Carousel.tsx';
-import CategoryRibbon from '@/widgets/shared/ui/category-ribbon/CategoryRibbon.tsx';
-import { ROUTES } from '@/widgets/shared/router/routes';
-import { CATALOG_LINKS_WITH_IMAGES } from '@/widgets/shared/model/CatalogLinksWithImages';
-import { SERVICES_LIST_WITH_IMAGES } from '@/widgets/shared/model/ServicesListWithImages';
+import Carousel from '@/shared/ui/carousel/Carousel.tsx';
+import CategoryRibbon from '@/shared/ui/category-ribbon/CategoryRibbon.tsx';
+import { ROUTES } from '@/shared/router/routes';
+import { CATALOG_LINKS_WITH_IMAGES } from '@/shared/model/CatalogLinksWithImages';
+import { SERVICES_LIST_WITH_IMAGES } from '@/shared/model/ServicesListWithImages';
 
 const images = [
     '/banner_0.png',
@@ -24,7 +24,7 @@ const images = [
             О компании
         </h1>
         <AboutArticle />
-        <h2 class="text-lg md:text-2xl font-semibold md:my-11 my-5 text-center">
+        <!--  <h2 class="text-lg md:text-2xl font-semibold md:my-11 my-5 text-center">
             Реализованные проекты
         </h2>
         <Carousel
@@ -33,15 +33,15 @@ const images = [
             slideWidth="400px"
             images={images}
             gap="5"
-        />
+        /> -->
         <CategoryRibbon
             title="Каталоги и цены"
-            href={ROUTES.CATALOG_I_CENY}
+            href={ROUTES.CATALOG.INDEX}
             items={CATALOG_LINKS_WITH_IMAGES.slice(0, 4)}
         />
         <CategoryRibbon
             title="Услуги"
-            href={ROUTES.USLUGI}
+            href={ROUTES.USLUGI.INDEX}
             items={SERVICES_LIST_WITH_IMAGES.slice(0, 4)}
         />
     </Container>

@@ -1,0 +1,128 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Container from '@/shared/ui/Container.astro';
+import Link from '@/shared/ui/Link.tsx';
+import LinkWithImage from '@/shared/ui/LinkWithImage.tsx';
+import Button from '@/shared/ui/Button.tsx';
+import Input from '@/shared/ui/Input.tsx';
+import { ROUTES } from '@/shared/router/routes';
+import Image from '@/shared/ui/Image.tsx';
+import { ORGSTEKLO_CATEGORIES } from '@/widgets/pages/orgsteklo';
+---
+
+<Layout title="Изделия из оргстекла">
+    <Container class="flex-col">
+        <h1 class="md:text-2xl text-xl font-semibold text-center md:mb-8 mb-4">
+            Изделия из оргстекла
+        </h1>
+        <h3 class="text-lg md:text-xl font-medium text-center md:mb-14 mb-7">
+            Подставки, стенды и рекламные решения из оргстекла под любые задачи
+        </h3>
+        <section class="w-full flex flex-col md:flex-row gap-5 md:mb-8 mb-4">
+            <article
+                class="flex flex-col gap-4 text-sm md:text-base leading-[150%]"
+            >
+                <h3 class="text-lg md:text-xl font-semibold">
+                    Что такое оргстекло?
+                </h3>
+                <p>
+                    Оргстекло — это современный аналог обычного стекла: лёгкое,
+                    прочное и гибкое. Его легко обрабатывать, оно не желтеет со
+                    временем и безопасно в использовании.
+                </p>
+                <p>
+                    Мы применяем оргстекло для изготовления подставок, витрин,
+                    ценникодержателей, визитниц и десятков других изделий.
+                </p>
+                <p>
+                    В каталоге представлены примеры стандартных изделий из
+                    оргстекла нашего производства.
+                </p>
+                <p>
+                    Также мы можем изготовить любые изделия по индивидуальному
+                    запросу заказчика из акрилового стекла любой толщины и по
+                    вашим размерам, можно подобрать цвет материала, на котором
+                    ваш товар будет выглядеть наиболее интересно и
+                    презентабельно.
+                </p>
+                <Link
+                    type="outline"
+                    href={ROUTES.KONTAKTY}
+                    classList="md:text-lg text-base w-fit"
+                    text="Заказать изделие"
+                />
+            </article>
+            <Image
+                src="/orgsteklo/orgsteklo.png"
+                alt="Изделия из оргстекла"
+                classList="w-full max-w-[630px] h-full"
+            />
+        </section>
+
+        <h2 class="text-lg md:text-2xl font-semibold text-center md:mb-11 mb-5">
+            Каталог
+        </h2>
+        <div
+            class="grid-cols-2-xs-3-lg-4 gap-x-5 md:gap-y-11 gap-y-5 md:mb-20 mb-10"
+        >
+            {
+                ORGSTEKLO_CATEGORIES.map((item) => (
+                    <LinkWithImage
+                        {...item}
+                        animate={true}
+                        imageWrapperClassList="h-[202px] border border-main-color rounded-[20px]"
+                    />
+                ))
+            }
+        </div>
+
+        <h2 class="text-xl md:text-2xl font-semibold text-center md:mb-8 mb-4">
+            Индивидуальное изготовление
+        </h2>
+        <p class="text-lg md:text-xl font-medium text-center md:mb-6 mb-3">
+            Мы изготавливаем любые изделия из акрила по индивидуальному заказу. <br
+            />
+            Вы можете выбрать толщину, цвет и форму оргстекла, а также нанести гравировку
+            логотипа или надписи.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5 md:mb-6 mb-3">
+            {
+                [1, 2, 3].map((item) => (
+                    <Image
+                        src={`/orgsteklo/individual_${item}.png`}
+                        alt={`Изделия из оргстекла ${item}`}
+                    />
+                ))
+            }
+        </div>
+        <p
+            class="rounded-[20px] border border-main-color py-2 md:px-20 px-5 text-sm md:text-base text-center italic md:mb-20 mb-10"
+        >
+            Современное оборудование позволяет изготовить демонстрационные
+            подиумы, стенды и навигацию из оргстекла с высокой точностью. Это
+            делает изделия эстетичными и удобными в эксплуатации.
+        </p>
+        <!-- TODO сделать форму -->
+        <!--  <section class="w-full flex flex-col gap-6">
+            <h2 class="text-xl md:text-2xl font-semibold text-center">
+                Хотите рассчитать стоимость или изготовить изделие по вашему
+                эскизу?
+            </h2>
+            <p class="text-center text-lg md:text-xl font-medium">
+                Оставьте заявку и наш менеджер с вами свяжется
+            </p>
+           
+           <form class="flex flex-col md:flex-row gap-5">
+                <Input placeholder="Имя" />
+                <Input placeholder="Телефон" />
+                <Input placeholder="Комментарий" />
+                <Button
+                    text="Оставить заявку"
+                    htmlType="submit"
+                    classList="whitespace-nowrap px-15"
+                />
+            </form> 
+        </section>-->
+    </Container>
+</Layout>

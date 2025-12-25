@@ -1,9 +1,9 @@
 import { ADVANTAGES } from '../model/AdvantagesList';
-import Image from '@/widgets/shared/ui/Image';
+import Image from '@/shared/ui/Image';
 
 export default function CompanyAdvantages() {
     return (
-        <div className="grid-cols-1-xs-2-lg-4 gap-5 py-10 w-full justify-between justify-items-center">
+        <div className="grid-cols-1-xs-2-md-3-lg-4 gap-5 py-10 w-full justify-between justify-items-center">
             {ADVANTAGES.map((advantage, index) => {
                 return (
                     <div

@@ -21,7 +21,7 @@ export default function FasadiPricesSection() {
                 {FASADI_PRICES_TABLE_SECTIONS.map((section) => (
                     <div
                         key={section.title}
-                        className="overflow-hidden border border-grey-color"
+                        className="overflow-hidden border border-gray-color"
                     >
                         <table className="w-full border-collapse text-[12px] md:text-base">
                             <thead>
@@ -52,7 +52,7 @@ export default function FasadiPricesSection() {
                                         className={`${
                                             index % 2 === 0
                                                 ? 'bg-white'
-                                                : 'bg-grey-color'
+                                                : 'bg-gray-color'
                                         }`}
                                     >
                                         <th

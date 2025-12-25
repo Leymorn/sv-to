@@ -1,0 +1,35 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Container from '@/shared/ui/Container.astro';
+import Image from '@/shared/ui/Image';
+import Link from '@/shared/ui/Link';
+import { ROUTES } from '@/shared/router/routes';
+import { MebelDlyaDomaProductsGrid } from '@/widgets/pages/mebel-dlya-doma';
+---
+
+<Layout title="Мебель для дома">
+    <Container class="flex-col">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10 md:mb-20">
+            <div class="text-lg md:text-xl font-medium flex flex-col gap-5">
+                <h1 class="text-xl md:text-2xl font-semibold">
+                    Мебель для дома
+                </h1>
+                Универсальные шкафы для гардеробных, прихожих и шоу-румов: разные
+                конфигурации секций, полок и штанг позволяют адаптировать их под
+                размер помещения. Корпуса из ЛДСП усилены металлическим каркасом
+                и фурнитурой коммерческого класса, поэтому мебель выдерживает интенсивную
+                эксплуатацию в магазинах.
+                <br />
+                Выбирайте подходящую модель из каталога или закажите изготовление
+                по собственному проекту — мы поможем с замерами и комплектуем мебель
+                аксессуарами для одежды.
+            </div>
+            <Image
+                src="/mebel-dlya-doma/mebel-dlya-doma-index.png"
+                alt="Мебель для дома"
+                classList="w-full object-cover rounded-[24px] max-h-[400px]"
+            />
+        </div>
+        <MebelDlyaDomaProductsGrid />
+    </Container>
+</Layout>

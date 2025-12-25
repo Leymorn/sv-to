@@ -6,7 +6,7 @@ const InfoItem = ({ title, text }: { title: string; text: string }) => {
             <span className="text-8xl font-semibold text-main-color mb-4">
                 {title}
             </span>
-            <div className="h-0.5 w-[229px] bg-grey-color mb-1"></div>
+            <div className="h-0.5 w-[229px] bg-gray-color mb-1"></div>
             <p className="text-lg md:text-xl md:mb-8 mb-4 text-center">
                 {text}
             </p>
@@ -16,7 +16,7 @@ const InfoItem = ({ title, text }: { title: string; text: string }) => {
 
 export default function InfoBlock() {
     return (
-        <div className="grid-cols-1-xs-2-lg-4">
+        <div className="grid-cols-2-xs-3-lg-4">
             {INFO.map((item) => (
                 <InfoItem key={item.title} {...item} />
             ))}

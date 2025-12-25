@@ -1,0 +1,97 @@
+import type { Product } from '@/entities/product';
+
+export const MEBEL_DLYA_DOMA_PRODUCTS: Product[] = [
+    {
+        title: 'Ш-1',
+        description: 'Арт: Ш-1',
+        size: '820 × 490 × 2200 мм',
+        price: 10240,
+        imageSrc: '/mebel-dlya-doma/sh-1.jpg',
+    },
+    {
+        title: 'Ш-2',
+        description: 'Арт: Ш-2',
+        size: '820 × 490 × 2200 мм',
+        price: 13164,
+        imageSrc: '/mebel-dlya-doma/sh-2.jpg',
+    },
+    {
+        title: 'Ш-3',
+        description: 'Арт: Ш-3',
+        size: '820 × 490 × 2200 мм',
+        price: 17301,
+        imageSrc: '/mebel-dlya-doma/sh-3.jpg',
+    },
+    {
+        title: 'Ш-3с',
+        description: 'Арт: Ш-3с',
+        size: '1230 × 490 × 2200 мм',
+        price: 19050,
+        imageSrc: '/mebel-dlya-doma/sh-3c.jpg',
+    },
+    {
+        title: 'Ш-4',
+        description: 'Арт: Ш-4',
+        size: '820 × 490 × 2200 мм',
+        price: 12777,
+        imageSrc: '/mebel-dlya-doma/sh-4.jpg',
+    },
+    {
+        title: 'П-1',
+        description: 'Арт: П-1',
+        size: '410 × 490 × 2200 мм',
+        price: 8297,
+        imageSrc: '/mebel-dlya-doma/p-1.jpg',
+    },
+    {
+        title: 'П-2',
+        description: 'Арт: П-2',
+        size: '410 × 490 × 2200 мм',
+        price: 12172,
+        imageSrc: '/mebel-dlya-doma/p-2.jpg',
+    },
+    {
+        title: 'ШУ-1 / ШУ-2',
+        description: 'Арт: ШУ-1 / ШУ-2',
+        size: '850 × 850 × 2200 мм / 730 × 730 × 2200 мм',
+        price: 18846,
+        priceLabel: '18 846 / 17 651 руб.',
+        imageSrc: '/mebel-dlya-doma/shu-1.jpg',
+    },
+    {
+        title: 'ШК-2',
+        description: 'Арт: ШК-2',
+        size: '750 × 370 × 2200 мм',
+        price: 12669,
+        imageSrc: '/mebel-dlya-doma/shk-2.jpg',
+    },
+    {
+        title: 'ШК-2Н',
+        description: 'Арт: ШК-2Н',
+        size: '750 × 370 × 2200 мм',
+        price: 12003,
+        imageSrc: '/mebel-dlya-doma/shk-2n.jpg',
+    },
+    {
+        title: 'ШК-3',
+        description: 'Арт: ШК-3',
+        size: '750 × 370 × 2200 мм',
+        price: 17241,
+        imageSrc: '/mebel-dlya-doma/shk-3.jpg',
+    },
+    {
+        title: 'ШК-6',
+        description: 'Арт: ШК-6',
+        size: '375 × 370 × 2200 мм',
+        price: 8902,
+        imageSrc: '/mebel-dlya-doma/shk-6.jpg',
+    },
+    {
+        title: 'ШК-8',
+        description: 'Арт: ШК-8',
+        size: '375 × 370 × 2200 мм',
+        price: 13971,
+        imageSrc: '/mebel-dlya-doma/shk-8.jpg',
+    },
+];
+

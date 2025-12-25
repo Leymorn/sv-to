@@ -1,6 +1,10 @@
-export { TOGROVOY_MEBEL_CATEGORIES } from './model/togrovaya-mebel-categories';
 export { default as CatalogBlock } from './ui/CatalogBlock';
-export { default as SuitableForBlock } from './ui/SuitableForBlock';
-export { default as StagesBlock } from './ui/StagesBlock';
-export { default as AdvantagesBlock } from './ui/AdvantagesBlock';
-export { default as RequestBlock } from './ui/RequestBlock';
+export { default as PrilavkiGrid } from './ui/PrilavkiGrid';
+export { default as StelazhiGrid } from './ui/StelazhiGrid';
+export { default as SteklyannyeVitrinyGrid } from './ui/SteklyannyeVitrinyGrid';
+export { default as StoykiResepshnGrid } from './ui/StoykiResepshnGrid';
+export { default as TorgovyeOstrovaGrid } from './ui/TorgovyeOstrovaGrid';
+export { default as OstrovnoeOborudovanieGrid } from './ui/OstrovnoeOborudovanieGrid';
+export { default as TorgovoeOborudovanieSEPGrid } from './ui/TorgovoeOborudovanieSEPGrid';
+export { default as PrilavkiIVitrinyIzAlumProfilyaGrid } from './ui/PrilavkiIVitrinyIzAlumProfilyaGrid';
+export { default as MuzeynoeOborudovanieGrid } from './ui/MuzeynoeOborudovanieGrid';

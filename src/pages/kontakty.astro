@@ -1,15 +1,14 @@
 ---
 import Layout from '@/layouts/Layout.astro';
-import Container from '@/widgets/shared/ui/Container.astro';
+import Container from '@/shared/ui/Container.astro';
 import {
     ContactPeopleBlock,
     AddressBlock,
     LegalAddressBlock,
-    WorkScheduleBlock,
     DeliverySection,
     MapBlock,
 } from '@/widgets/pages/kontakty';
-import Contacts from '@/widgets/shared/ui/contacts/Contacts.astro';
+import Contacts from '@/shared/ui/contacts/Contacts.astro';
 ---
 
 <Layout title="Контакты">
@@ -18,7 +17,7 @@ import Contacts from '@/widgets/shared/ui/contacts/Contacts.astro';
             Контактная информация
         </h1>
         <div
-            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[250px_350px_1fr] gap-5"
+            class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-[250px_350px_1fr] gap-5"
         >
             <article class="flex flex-col gap-2">
                 <h3 class="text-lg md:text-xl font-semibold pb-4 md:pb-8">
@@ -28,7 +27,14 @@ import Contacts from '@/widgets/shared/ui/contacts/Contacts.astro';
             </article>
             <AddressBlock />
             <MapBlock />
-            <WorkScheduleBlock />
+            <div class="block sm:hidden">
+                <script
+                    type="text/javascript"
+                    charset="utf-8"
+                    async
+                    src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A569c28b10359696529938bb7227574f964969b8fc0a820608b361d1f81e18c24&width=320&height=340&lang=ru_RU&scroll=true"
+                ></script>
+            </div>
             <LegalAddressBlock />
             <ContactPeopleBlock />
         </div>

@@ -6,7 +6,7 @@ import {
 export default function AdditionalServicesSection() {
     return (
         <div className="flex flex-col gap-5 mb-10 md:mb-20">
-            <table className="w-full border-collapse border border-grey-color text-[12px] md:text-base">
+            <table className="w-full border-collapse border border-gray-color text-[12px] md:text-base">
                 <thead>
                     <tr className="bg-main-color-3">
                         <th
@@ -28,7 +28,7 @@ export default function AdditionalServicesSection() {
                         <tr
                             key={row.name}
                             className={`${
-                                index % 2 === 0 ? 'bg-white' : 'bg-grey-color'
+                                index % 2 === 0 ? 'bg-white' : 'bg-gray-color'
                             }`}
                         >
                             <th

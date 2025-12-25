@@ -1,4 +1,4 @@
-import { ROUTES } from '@/widgets/shared/router/routes';
+import { ROUTES } from '@/shared/router/routes';
 
 export const FOOTER_NAVIGATION_LINKS = [
     {
@@ -6,19 +6,15 @@ export const FOOTER_NAVIGATION_LINKS = [
         text: 'О компании',
     },
     {
-        url: ROUTES.CATALOG_I_CENY,
+        url: ROUTES.CATALOG.INDEX,
         text: 'Каталог',
     },
     {
-        url: ROUTES.USLUGI,
+        url: ROUTES.USLUGI.INDEX,
         text: 'Услуги',
     },
     {
-        url: '/',
-        text: 'Доставка и самовывоз',
-    },
-    {
-        url: '/',
+        url: ROUTES.PROIZVODSTVO,
         text: 'Производство',
     },
     {

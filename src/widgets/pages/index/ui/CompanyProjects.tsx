@@ -1,5 +1,5 @@
 import { PROJECTS_LINKS } from '../model/ProjectsLinks';
-import Link from '@/widgets/shared/ui/Link';
+import Link from '@/shared/ui/Link';
 
 export default function CompanyProjects() {
     return (

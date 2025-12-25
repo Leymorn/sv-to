@@ -1,0 +1,105 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import { ROUTES } from '@/shared/router/routes';
+import Container from '@/shared/ui/Container.astro';
+import Image from '@/shared/ui/Image';
+import Link from '@/shared/ui/Link';
+
+const COMPONENTS = [
+    {
+        text: '1. Замеры и планировочные решения',
+        imageSrc: '/services/dizayn-magazina/zamery.png',
+    },
+    {
+        text: '2. Технические эскизы',
+        imageSrc: '/services/dizayn-magazina/eskizy.png',
+    },
+    {
+        text: '3. 3D-визуализация',
+        imageSrc: '/services/dizayn-magazina/vizualizaciya.png',
+    },
+    {
+        text: '4. Чертежи для производства',
+        imageSrc: '/services/dizayn-magazina/chertezhy.png',
+    },
+];
+
+const STAGES = [
+    'Выезд и замеры',
+    'Планировка + эскизы',
+    '3D-визуализация',
+    'Чертежи',
+    'Производство',
+    'Монтаж',
+];
+---
+
+<Layout title="Services">
+    <Container class="flex-col">
+        <h1 class="text-xl md:text-2xl font-semibold mb-4 md:mb-4 text-center">
+            Дизайн магазина
+        </h1>
+        <p class="text-lg md:text-xl text-center mb-10 md:mb-20">
+            Разрабатываем проекты торговли любых форматов — от планировки и
+            визуализации до подготовки производства.
+        </p>
+        <p class="text-lg md:text-xl font-semibold text-center mb-4 md:mb-8">
+            Что входит в дизайн торговых помещений
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10 md:mb-20">
+            {
+                COMPONENTS.map((component) => (
+                    <div class="relative">
+                        <Image src={component.imageSrc} alt={component.text} />
+                        <span class="absolute  right-[50%] bottom-[50%] translate-y-[50%] translate-x-[50%] text-center text-base md:text-lg font-medium bg-white opacity-80 py-4 px-2 rounded-[20px] leading-[100%]">
+                            {component.text}
+                        </span>
+                    </div>
+                ))
+            }
+        </div>
+        <p class="text-lg md:text-xl font-semibold text-center mb-4 md:mb-8">
+            Почему это важно
+        </p>
+        <p
+            class="flex items-center justify-center text-center border border-main-color rounded-[20px] md:p-5 p-2 w-full italic mb-10 md:mb-20"
+        >
+            Грамотный торговый дизайн помогает продать больше. Мы учитываем
+            трафик, тип товара, сценарии покупателя и требования торгового
+            центра. Чем точнее проработан проект, тем быстрее он окупается.
+        </p>
+        <div
+            class="flex flex-col md:flex-row gap-5 items-center mb-10 md:mb-20"
+        >
+            <div class="flex flex-col text-sm md:text-base gap-5">
+                <span class="text-xl md:text-2xl font-medium">Стоимость</span>
+                Стоимость дизайн-проекта рассчитывается индивидуально – она зависит
+                от площади помещения, объёма визуализаций, количества оборудования
+                и сложности задач.Наши цены остаются доступными, и мы всегда обсуждаем
+                варианты под ваш бюджет.
+            </div>
+            <Link
+                href={ROUTES.KONTAKTY}
+                text="Узнать стоимость"
+                classList="whitespace-nowrap"
+            />
+        </div>
+        <p
+            class="text-xl md:text-2xl font-semibold mb-4 md:mb-4 text-center mb-4 md:mb-8"
+        >
+            Этапы
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {
+                STAGES.map((stage, index) => (
+                    <div class="flex items-center gap-5 border border-main-color rounded-[20px] p-4 text-sm md:text-base">
+                        <span class="text-[50px] md:text-[100px] font-family-roboto text-main-color leading-[100%]">
+                            {index + 1}
+                        </span>
+                        {stage}
+                    </div>
+                ))
+            }
+        </div>
+    </Container>
+</Layout>

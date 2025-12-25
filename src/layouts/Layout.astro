@@ -1,30 +1,228 @@
 ---
 import { Header } from '../widgets/header';
 import { Footer } from '../widgets/footer';
+import { BREADCRUMBS } from '../shared/router/breadcrumbs';
+import Container from '../shared/ui/Container.astro';
+import type { BreadCrumbItem } from '../shared/model/BreadCrumb';
+import type { SeoMetadata } from '../shared/model/SeoMetadata';
+import { prepareSeoMetadata } from '../shared/utils/seo';
+import BreadCrumbs from '../widgets/breadcrumbs';
 import '../styles/global.css';
 
 interface Props {
     title: string;
+    breadCrumbs?: BreadCrumbItem[];
+    seo?: SeoMetadata;
 }
 
-const { title } = Astro.props;
+const normalizePath = (pathname: string): string => {
+    if (pathname === '/') return pathname;
+    return pathname.endsWith('/') ? pathname.slice(0, -1) : pathname;
+};
+
+const { title, breadCrumbs, seo } = Astro.props;
+const currentPath = normalizePath(Astro.url.pathname);
+const resolvedBreadCrumbs = breadCrumbs ?? BREADCRUMBS[currentPath] ?? [];
+
+// Подготавливаем SEO метаданные
+const seoMetadata = seo
+    ? prepareSeoMetadata({ ...seo, title: seo.title || title }, Astro.url)
+    : prepareSeoMetadata({ title }, Astro.url);
 ---
 
 <!doctype html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <meta name="description" content="Astro description" />
         <meta name="viewport" content="width=device-width" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="generator" content={Astro.generator} />
-        <title>{title}</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- Basic SEO -->
+        <title>{seoMetadata.title}</title>
+        {
+            seoMetadata.description && (
+                <meta name="description" content={seoMetadata.description} />
+            )
+        }
+        {
+            seoMetadata.keywords && (
+                <meta name="keywords" content={seoMetadata.keywords} />
+            )
+        }
+        {
+            seoMetadata.author && (
+                <meta name="author" content={seoMetadata.author} />
+            )
+        }
+        {
+            seoMetadata.robots && (
+                <meta name="robots" content={seoMetadata.robots} />
+            )
+        }
+
+        <!-- Canonical URL -->
+        <link rel="canonical" href={seoMetadata.canonical} />
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content={seoMetadata.type} />
+        <meta property="og:title" content={seoMetadata.title} />
+        {
+            seoMetadata.description && (
+                <meta
+                    property="og:description"
+                    content={seoMetadata.description}
+                />
+            )
+        }
+        {
+            seoMetadata.image && (
+                <meta property="og:image" content={seoMetadata.image} />
+            )
+        }
+        {
+            seoMetadata.imageAlt && (
+                <meta property="og:image:alt" content={seoMetadata.imageAlt} />
+            )
+        }
+        <meta property="og:url" content={seoMetadata.url} />
+        <meta property="og:site_name" content={seoMetadata.siteName} />
+        <meta property="og:locale" content={seoMetadata.locale} />
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content={seoMetadata.twitterCard} />
+        <meta name="twitter:title" content={seoMetadata.title} />
+        {
+            seoMetadata.description && (
+                <meta
+                    name="twitter:description"
+                    content={seoMetadata.description}
+                />
+            )
+        }
+        {
+            seoMetadata.image && (
+                <meta name="twitter:image" content={seoMetadata.image} />
+            )
+        }
+        {
+            seoMetadata.imageAlt && (
+                <meta name="twitter:image:alt" content={seoMetadata.imageAlt} />
+            )
+        }
+        {
+            seoMetadata.twitterSite && (
+                <meta name="twitter:site" content={seoMetadata.twitterSite} />
+            )
+        }
+        {
+            seoMetadata.twitterCreator && (
+                <meta
+                    name="twitter:creator"
+                    content={seoMetadata.twitterCreator}
+                />
+            )
+        }
+
+        <!-- Article specific (if type is article) -->
+        {
+            seoMetadata.type === 'article' && (
+                <>
+                    {seoMetadata.publishedTime && (
+                        <meta
+                            property="article:published_time"
+                            content={seoMetadata.publishedTime}
+                        />
+                    )}
+                    {seoMetadata.modifiedTime && (
+                        <meta
+                            property="article:modified_time"
+                            content={seoMetadata.modifiedTime}
+                        />
+                    )}
+                    {seoMetadata.author && (
+                        <meta
+                            property="article:author"
+                            content={seoMetadata.author}
+                        />
+                    )}
+                </>
+            )
+        }
+
+        <!-- Additional meta tags -->
+        {
+            seoMetadata.additionalMeta?.map((meta) => (
+                <meta
+                    {...(meta.name ? { name: meta.name } : {})}
+                    {...(meta.property ? { property: meta.property } : {})}
+                    content={meta.content}
+                />
+            ))
+        }
+        <script type="text/javascript">
+            (function (m, e, t, r, i, k, a) {
+                m[i] =
+                    m[i] ||
+                    function () {
+                        (m[i].a = m[i].a || []).push(arguments);
+                    };
+                m[i].l = 1 * new Date();
+                for (var j = 0; j < document.scripts.length; j++) {
+                    if (document.scripts[j].src === r) {
+                        return;
+                    }
+                }
+                (k = e.createElement(t)),
+                    (a = e.getElementsByTagName(t)[0]),
+                    (k.async = 1),
+                    (k.src = r),
+                    a.parentNode.insertBefore(k, a);
+            })(
+                window,
+                document,
+                'script',
+                'https://mc.yandex.ru/metrika/tag.js?id=105523994',
+                'ym'
+            );
+
+            ym(105523994, 'init', {
+                ssr: true,
+                webvisor: true,
+                clickmap: true,
+                ecommerce: 'dataLayer',
+                accurateTrackBounce: true,
+                trackLinks: true,
+            });
+        </script>
+        <noscript
+            ><div>
+                <img
+                    src="https://mc.yandex.ru/watch/105523994"
+                    style="position:absolute; left:-9999px;"
+                    alt=""
+                />
+            </div></noscript
+        >
     </head>
     <body class="flex flex-col items-center min-h-[100vh]">
         <Header />
         <main
             class="w-full flex grow flex-col items-center py-8 md:pt-15 md:pb-20"
         >
+            {
+                resolvedBreadCrumbs.length > 0 && (
+                    <Container class="md:mb-10 mb-6">
+                        <BreadCrumbs items={resolvedBreadCrumbs} />
+                    </Container>
+                )
+            }
             <slot />
         </main>
         <Footer />

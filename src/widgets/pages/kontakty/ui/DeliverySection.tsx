@@ -1,4 +1,4 @@
-import Image from '@/widgets/shared/ui/Image';
+import Image from '@/shared/ui/Image';
 
 export default function DeliverySection() {
     return (

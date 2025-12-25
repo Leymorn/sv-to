@@ -1,0 +1,14 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Container from '@/shared/ui/Container.astro';
+import { AnatomicheskieSwitch } from '@/widgets/pages/manekeny/inedex';
+---
+
+<Layout title="Манекены анатомические">
+    <Container class="flex-col">
+        <h1 class="text-xl md:text-2xl font-semibold md:mb-16 mb-8 text-center">
+            Манекены анатомические
+        </h1>
+        <AnatomicheskieSwitch client:load />
+    </Container>
+</Layout>

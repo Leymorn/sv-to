@@ -1,0 +1,14 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Container from '@/shared/ui/Container.astro';
+import { AksessuaryPanelsSwitch } from '@/widgets/pages/aksessuary-dlya-ekonompaneli';
+---
+
+<Layout title="Аксессуары к экономпанелям">
+    <Container class="flex-col">
+        <h1 class="md:text-2xl text-xl font-semibold md:mb-8 mb-4 text-center">
+            Аксессуары для экономпанели
+        </h1>
+        <AksessuaryPanelsSwitch client:load />
+    </Container>
+</Layout>

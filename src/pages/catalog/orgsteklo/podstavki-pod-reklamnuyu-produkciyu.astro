@@ -1,0 +1,15 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Container from '@/shared/ui/Container.astro';
+import { PodstavkiPodReklamuGrid } from '@/widgets/pages/orgsteklo';
+---
+
+<Layout title="Подставки под рекламную продукцию">
+    <Container class="flex-col">
+        <h1 class="text-xl md:text-2xl font-semibold md:mb-8 mb-4 text-center">
+            Подставки под рекламную продукцию
+        </h1>
+        <PodstavkiPodReklamuGrid client:load />
+    </Container>
+</Layout>
+

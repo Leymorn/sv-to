@@ -1,27 +1,26 @@
 ---
 import HeaderContacts from './HeaderContacts';
-import Image from '../../shared/ui/Image';
-import Container from '../../../widgets/shared/ui/Container.astro';
+import Image from '@/shared/ui/Image';
+import Container from '@/shared/ui/Container.astro';
 import HeaderNavigation from './HeaderNavigation';
-import LinkWithImage from '@/widgets/shared/ui/LinkWithImage';
 ---
 
 <header class="w-full flex flex-col items-center">
     <div
         class="p-5 bg-main-color-3 w-full text-lg font-roboto font-normal leading-[100%]"
     >
-        <Container class="grid-cols-1-xs-2-lg-4 m-auto gap-5">
+        <Container class="grid-cols-2-xs-3-lg-4 m-auto gap-5">
             <HeaderContacts />
         </Container>
     </div>
     <Container class="gap-5 py-5">
         <a
             href="/"
-            class="flex font-roboto items-center justify-center gap-[14px] text-[100px] font-semibold leading-[100%]"
+            class="flex font-roboto items-center justify-center gap-[6px] lg:gap-[14px] text-[66px] lg:text-[100px] font-semibold leading-[100%]"
         >
-            <Image src="/logo.svg" classList="min-w-[87px]" />
+            <Image src="/logo.svg" classList="min-w-[50px] lg:min-w-[87px]" />
             <span class="relative bottom-1">СВ</span>
-            <div class="flex flex-col gap-2 text-3xl font-light">
+            <div class="flex flex-col gap-2 text-xl lg:text-3xl font-light">
                 ТОРГОВОЕ
                 <span>ОБОРУДОВАНИЕ</span>
             </div>

@@ -1,0 +1,15 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Container from '@/shared/ui/Container.astro';
+import { PrilavkiGrid } from '@/widgets/pages/torgovaya-mebel';
+//эти же товары - модульное торговое оборудование
+---
+
+<Layout title="Прилавки из ЛДСП">
+    <Container class="flex-col">
+        <h1 class="md:text-2xl text-xl font-semibold md:mb-8 mb-4 text-center">
+            Прилавки из ЛДСП
+        </h1>
+        <PrilavkiGrid client:load />
+    </Container>
+</Layout>

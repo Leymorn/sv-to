@@ -1,5 +1,5 @@
-import Link from '@/widgets/shared/ui/Link';
-import Image from '@/widgets/shared/ui/Image';
+import Link from '@/shared/ui/Link';
+import Image from '@/shared/ui/Image';
 
 export default function AboutArticle() {
     return (

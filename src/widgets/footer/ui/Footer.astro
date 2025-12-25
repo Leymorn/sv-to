@@ -1,15 +1,15 @@
 ---
-import Image from '../../shared/ui/Image';
-import Container from '@/widgets/shared/ui/Container.astro';
+import Image from '@/shared/ui/Image';
+import Container from '@/shared/ui/Container.astro';
 import FooterNavigation from './FooterNavigation';
-import FooterAddress from './FooterAddress.astro';
-import Contacts from '@/widgets/shared/ui/contacts/Contacts.astro';
+import Contacts from '@/shared/ui/contacts/Contacts.astro';
+import GoogleMap from './GoogleMap.astro';
 ---
 
 <footer
-    class="w-full bg-grey-color-2 text-white pt-5 pb-20 font-roboto font-light text-sm"
+    class="w-full bg-gray-color-2 text-white pt-5 pb-20 font-roboto font-light text-sm"
 >
-    <Container class="justify-between flex-wrap gap-5 mx-auto">
+    <Container class="grid-cols-2-xs-3-lg-4 gap-5 mx-auto">
         <a class="w-full sm:w-auto" href="/">
             <Image src="/logo.svg" classList="w-[87px]" />
         </a>
@@ -18,6 +18,6 @@ import Contacts from '@/widgets/shared/ui/contacts/Contacts.astro';
         </div>
 
         <FooterNavigation />
-        <FooterAddress />
+        <GoogleMap />
     </Container>
 </footer>

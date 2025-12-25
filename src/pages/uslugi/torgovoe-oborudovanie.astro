@@ -1,0 +1,54 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Container from '@/shared/ui/Container.astro';
+import Link from '@/shared/ui/Link.tsx';
+import { ROUTES } from '@/shared/router/routes';
+import Image from '@/shared/ui/Image.tsx';
+import {
+    SuitableForBlock,
+    StagesBlock,
+    AdvantagesBlock,
+    RequestBlock,
+} from '@/widgets/pages/torgovoe-oborudovanie';
+---
+
+<Layout title="Торговое оборудование">
+    <Container class="flex-col">
+        <div
+            class="grid grid-cols-1 md:grid-cols-2 justify-center gap-5 md:my-10 my-5"
+        >
+            <div class="flex flex-col gap-5 text-lg md:text-xl font-medium">
+                <h1 class="text-lg md:text-2xl font-semibold">
+                    Торговое оборудование
+                </h1>
+                Мы берём на себя весь процесс: от производства до доставки и монтажа
+                под ключ. Работаем по всей России, чтобы ваши проекты реализовывались
+                удобно и без лишних хлопот.
+                <div class="flex gap-5 mt-auto">
+                    <Link
+                        type="default"
+                        href={ROUTES.CATALOG.INDEX}
+                        classList="md:text-lg text-base"
+                        text="Перейти к каталогу"
+                    />
+                    <Link
+                        type="outline"
+                        href={ROUTES.KONTAKTY}
+                        classList="md:text-lg text-base"
+                        text="Рассчитать стоимость"
+                    />
+                </div>
+            </div>
+
+            <Image
+                src="/torgovoe-oborudovanie/torgovoe-oborudovanie.png"
+                alt="Торговое оборудование"
+                classList="w-full"
+            />
+        </div>
+        <SuitableForBlock />
+        <StagesBlock />
+        <AdvantagesBlock />
+        <!-- <RequestBlock client:load /> -->
+    </Container></Layout
+>

@@ -1,8 +1,8 @@
 ---
 import Layout from '@/layouts/Layout.astro';
-import Container from '@/widgets/shared/ui/Container.astro';
-import Image from '@/widgets/shared/ui/Image';
-import Link from '@/widgets/shared/ui/Link';
+import Container from '@/shared/ui/Container.astro';
+import Image from '@/shared/ui/Image';
+import Link from '@/shared/ui/Link';
 import {
     InfoBlock,
     ImagesBlock,
@@ -24,8 +24,9 @@ import {
             src="/proizvodstvo/zeh.jpg"
             alt="Производство торгового оборудования"
             classList="w-full md:h-[485px] md:mb-8 mb-4"
+            imageClassList="object-cover w-full"
         />
-        <div class="flex gap-5 justify-center md:mb-20 mb-10">
+        <!--  <div class="flex gap-5 justify-center md:mb-20 mb-10">
             <Link
                 type="default"
                 href="/"
@@ -38,11 +39,11 @@ import {
                 classList="md:text-lg text-base text-center"
                 text="Рассчитать стоимость"
             />
-        </div>
-        <InfoBlock />
-        <ImagesBlock />
-        <MaterialsBlock />
-        <LogisticsBlock />
-        <!-- TODO: добавить блок частых вопросов и записи на экскурсию (если надо) -->
+            -->
     </Container>
+    <InfoBlock />
+    <ImagesBlock />
+    <MaterialsBlock />
+    <LogisticsBlock />
+    <!-- TODO: добавить блок частых вопросов и записи на экскурсию (если надо) -->
 </Layout>

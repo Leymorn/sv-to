@@ -1,0 +1,230 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Link from '@/shared/ui/Link';
+import Container from '@/shared/ui/Container.astro';
+import Image from '@/shared/ui/Image';
+import { Icon } from 'astro-icon/components';
+import { ROUTES } from '@/shared/router/routes';
+
+const FASAD_STYLES = [
+    {
+        imageSrc: '/mebelnye-fasady/kuhonnye-fasady/high-tech.png',
+        title: 'Современный хай-тек',
+        description:
+            'Гладкие фасады, отражающие поверхности, минимум деталей и акцент на подсветку.',
+    },
+    {
+        imageSrc: '/mebelnye-fasady/kuhonnye-fasady/modern.png',
+        title: 'Модерн',
+        description:
+            'Лаконичные линии, матовые поверхности, спокойные тона и функциональность.',
+    },
+    {
+        imageSrc: '/mebelnye-fasady/kuhonnye-fasady/classic.png',
+        title: 'Классика',
+        description:
+            'Фрезеровка, декоративные элементы, карнизы, натуральные оттенки.',
+    },
+    {
+        imageSrc: '/mebelnye-fasady/kuhonnye-fasady/provans.png',
+        title: 'Прованс',
+        description:
+            'Пастельные цвета, патина, открытые полки, уютная атмосферность.',
+    },
+];
+
+const HOW_TO_CHOOSE = [
+    {
+        title: 'Выдвижные ящики вместо глубоких полок',
+        text: 'Удобнее, эргономичнее и помогает использовать нижнее пространство полностью.',
+    },
+    {
+        title: 'Используйте нестандартные решения',
+        text: 'Бутылочницы, карусели, модули под потолок — всё это повышает удобство кухни.',
+    },
+    {
+        title: 'Заложите 15–20% на непредвиденные расходы',
+        text: 'На этапе проектирования часто появляются улучшения, которые хочется добавить.',
+    },
+    {
+        title: 'Мойка — в удобном доступе',
+        text: 'Лучше размещать её так, чтобы к ней легко подойти с любой стороны.',
+    },
+];
+
+const MATERIALS = [
+    {
+        imageSrc: '/mebelnye-fasady/kuhonnye-fasady/derevo.png',
+        title: 'Натуральное дерево',
+        description: 'Дорого, красиво, долговечно. Требует ухода.',
+    },
+    {
+        imageSrc: '/mebelnye-fasady/kuhonnye-fasady/mdf.png',
+        title: 'МДФ',
+        description:
+            'Самый универсальный вариант. Фасады могут быть покрашены, покрыты плёнкой или пластиком, легко принимают любую форму.',
+    },
+    {
+        imageSrc: '/mebelnye-fasady/kuhonnye-fasady/ramochnye-fasady.png',
+        title: 'Рамочные фасады',
+        description:
+            'Рамка + вставка. Лёгкие, стильные, подходят для современных кухонь. Могут быть со стеклом.',
+    },
+    {
+        imageSrc: '/mebelnye-fasady/kuhonnye-fasady/plastic.png',
+        title: 'Пластик / HPL',
+        description:
+            'Максимальная устойчивость к влаге и ударам, огромный выбор цветов и фактур.',
+    },
+];
+---
+
+<Layout title="Кухонные фасады">
+    <Container class="flex-col">
+        <h1 class="text-xl md:text-2xl font-semibold mb-4 md:mb-8 text-center">
+            Кухонные фасады
+        </h1>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10 md:mb-20">
+            <div class="flex flex-col gap-5 text-lg md:text-xl font-semibold">
+                Кухонные фасады — это основа стиля любой кухни. Они определяют
+                внешний вид, удобство и долговечность мебели. Мы изготавливаем
+                фасады на собственном производстве по индивидуальным размерам и
+                в нужном вам стиле: от современной минималистики до классики и
+                прованса.
+                <br />
+                <br />
+                Кухня — это не просто место для готовки. Здесь мы проводим значительную
+                часть дня, принимаем гостей, общаемся, отдыхаем. Поэтому фасады должны
+                быть не только красивыми, но и функциональными, соответствовать вашему
+                образу жизни и интерьеру.
+                <Link
+                    text="Посмотреть стоимость"
+                    classList="w-fit"
+                    href={ROUTES.MEBELNYE_FASADY.INDEX}
+                />
+            </div>
+            <Image
+                src="/mebelnye-fasady/kuhonnye-fasady/kuhonnye-fasady-index.png"
+            />
+        </div>
+        <h2 class="text-xl md:text-2xl font-semibold mb-4 md:mb-8 text-center">
+            Стили кухонных фасадов
+        </h2>
+        <div class="grid-cols-2-xs-3-lg-4 md:gap-5 gap-2 mb-4 md:mb-8">
+            {
+                FASAD_STYLES.map((style) => (
+                    <div class="flex flex-col gap-5">
+                        <Image
+                            src={style.imageSrc}
+                            classList="md:max-h-[207px] md:min-h-[207px] max-h-[140px] min-h-[140px]  h-full"
+                            objectFit="cover"
+                        />
+                        <span class="font-medium text-lg md:text-xl">
+                            {style.title}
+                        </span>
+                        {style.description}
+                    </div>
+                ))
+            }
+        </div>
+        <span class="text-lg md:text-xl mb-2 md:mb-4"
+            >Фасады — это первое, что видят в кухне.</span
+        >
+        <span class="text-sm md:text-base mb-1 md:mb-2">
+            Именно они задают стиль и влияют на визуальное восприятие
+            пространства.</span
+        >
+        <ul
+            class="text-sm md:text-base list-disc list-inside pl-2 mb-10 md:mb-20"
+        >
+            <li>светлые фасады расширяют кухню</li>
+            <li>тёмные делают интерьер выразительным</li>
+            <li>текстуры дерева добавляют теплоты</li>
+            <li>глянец создаёт современный эффект</li>
+        </ul>
+        <h2 class="text-xl md:text-2xl font-semibold mb-4 md:mb-8 text-center">
+            Как выбрать фасады
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10 md:mb-20">
+            {
+                HOW_TO_CHOOSE.map((how) => (
+                    <div class="flex gap-5">
+                        <Icon
+                            name="check"
+                            class="text-main-color min-w-[54px]"
+                            size="36"
+                        />
+                        <span class="text-lg md:text-xl font-medium flex flex-col gap-4">
+                            {how.title}
+                            <span class="text-sm md:text-base font-normal">
+                                {how.text}
+                            </span>
+                        </span>
+                    </div>
+                ))
+            }
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10 md:mb-20">
+            <div class="flex flex-col text-sm md:text-base">
+                <span class="text-xl md:text-2xl font-semibold mb-4 md:mb-8"
+                    >Угловые кухни — особенности</span
+                >
+                Угол — один из самых сложных участков. Варианты решения:
+                <ul class="list-disc list-inside pl-2 mb-2">
+                    <li>прямые модули</li>
+                    <li>угловые тумбы с дверцей</li>
+                    <li>выдвижные системы</li>
+                    <li>поворотные карусели</li>
+                </ul>
+                <Image
+                    src="/mebelnye-fasady/kuhonnye-fasady/ugol-2.png"
+                    classList="max-h-[240px] md:max-h-full"
+                />
+            </div>
+            <Image
+                src="/mebelnye-fasady/kuhonnye-fasady/ugol-1.png"
+                objectFit="cover"
+                classList="max-h-[240px] md:max-h-full"
+            />
+        </div>
+        <h2 class="text-xl md:text-2xl font-semibold mb-4 md:mb-8 text-center">
+            Подсветка и эргономика
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10 md:mb-20">
+            <span class="text-sm md:text-lg">
+                Хорошее освещение рабочей поверхности — обязательный элемент
+                современной кухни.
+                <br />
+                Подсветка внутри шкафчиков или стеклянных фасадов добавляет лёгкости
+                и стиля.
+                <br /> Рабочий треугольник: плита — мойка — холодильник должны располагаться
+                на удобном расстоянии.
+            </span>
+            <Image
+                src="/mebelnye-fasady/kuhonnye-fasady/podsvetka.png"
+                objectFit="contain"
+            />
+        </div>
+        <h2 class="text-xl md:text-2xl font-semibold mb-4 md:mb-8 text-center">
+            Из чего делают фасады
+        </h2>
+        <div class="grid-cols-2-xs-3-lg-4 gap-5 mb-4 md:mb-8">
+            {
+                MATERIALS.map((material) => (
+                    <div class="flex flex-col text-lg md:text-xl font-medium gap-4">
+                        <Image
+                            src={material.imageSrc}
+                            objectFit="cover"
+                            classList="h-[274px]"
+                        />
+                        {material.title}
+                        <span class="text-sm text-base font-normal">
+                            {material.description}
+                        </span>
+                    </div>
+                ))
+            }
+        </div>
+    </Container>
+</Layout>

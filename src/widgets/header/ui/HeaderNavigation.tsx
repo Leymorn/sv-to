@@ -1,5 +1,5 @@
 import { HEADER_NAVIGATION_LINKS } from '../model/HeaderNavigationLinks';
-import Link from '@/widgets/shared/ui/Link';
+import Link from '@/shared/ui/Link';
 
 export default function HeaderNavigation() {
     return (

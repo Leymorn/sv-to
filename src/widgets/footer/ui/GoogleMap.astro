@@ -1,0 +1,21 @@
+---
+const organizationName = 'Св-ТО, производственно-торговая фирма';
+const address = 'Санкт-Петербург, ул. Маршала Новикова, 28 к 4Б';
+// Используем координаты из 2GIS для точного позиционирования
+const lat = 60.0270417113385;
+const lon = 30.271368026733402;
+// Формируем запрос с названием организации и адресом - Google Maps автоматически создаст маркер с информацией
+const query = encodeURIComponent(`${organizationName}, ${address}`);
+---
+
+<article class="w-full h-[160px] rounded-lg overflow-hidden">
+    <iframe
+        src={`https://www.google.com/maps?q=${query}&ll=${lat},${lon}&z=15&output=embed&iwloc=near`}
+        width="100%"
+        height="100%"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Карта расположения компании"></iframe>
+</article>

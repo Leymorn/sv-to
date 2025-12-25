@@ -1,0 +1,14 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Container from '@/shared/ui/Container.astro';
+import TorgovoeOborudovanieSEPGrid from '@/widgets/pages/torgovaya-mebel/ui/TorgovoeOborudovanieSEPGrid';
+---
+
+<Layout title="Стеллажи из ЛДСП">
+    <Container class="flex-col">
+        <h1 class="md:text-2xl text-xl font-semibold md:mb-8 mb-4 text-center">
+            Торговое оборудование с экономпанелями
+        </h1>
+        <TorgovoeOborudovanieSEPGrid client:load />
+    </Container>
+</Layout>

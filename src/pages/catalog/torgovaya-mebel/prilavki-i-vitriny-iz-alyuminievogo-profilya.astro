@@ -1,0 +1,14 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Container from '@/shared/ui/Container.astro';
+import { PrilavkiIVitrinyIzAlumProfilyaGrid } from '@/widgets/pages/torgovaya-mebel';
+---
+
+<Layout title="Прилавки и витрины из алюминиевого профиля">
+    <Container class="flex-col">
+        <h1 class="md:text-2xl text-xl font-semibold md:mb-8 mb-4 text-center">
+            Прилавки и витрины из алюминиевого профиля
+        </h1>
+        <PrilavkiIVitrinyIzAlumProfilyaGrid client:load />
+    </Container>
+</Layout>

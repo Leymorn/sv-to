@@ -1,4 +1,4 @@
-import { ROUTES } from '@/widgets/shared/router/routes';
+import { ROUTES } from '@/shared/router/routes';
 
 export const HEADER_NAVIGATION_LINKS = [
     {
@@ -6,16 +6,16 @@ export const HEADER_NAVIGATION_LINKS = [
         text: 'О компании',
     },
     {
-        url: ROUTES.USLUGI,
+        url: ROUTES.USLUGI.INDEX,
         text: 'Услуги',
     },
     {
-        url: ROUTES.CATALOG_I_CENY,
-        text: 'Каталог и цены',
+        url: ROUTES.CATALOG.INDEX,
+        text: 'Каталог',
     },
     {
-        url: ROUTES.TORGOVAYA_MEBEL,
-        text: 'Торговая мебель',
+        url: ROUTES.MEBELNYE_FASADY.INDEX,
+        text: 'Фасады',
     },
     {
         url: '/',

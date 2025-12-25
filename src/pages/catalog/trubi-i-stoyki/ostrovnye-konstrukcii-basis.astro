@@ -1,0 +1,154 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Container from '@/shared/ui/Container.astro';
+import Image from '@/shared/ui/Image';
+
+const ADVANTAGES = [
+    {
+        imageSrc:
+            '/trubi-i-stoyki/ostrovnye-konstrukcii-basis/icons/clothes.png',
+        text: 'Подходит для одежды, аксессуаров и смежных категорий',
+    },
+    {
+        imageSrc:
+            '/trubi-i-stoyki/ostrovnye-konstrukcii-basis/icons/hanger.png',
+        text: 'Большой выбор навесов: кронштейны, вешала, крючки, штанги, полки',
+    },
+    {
+        imageSrc: '/trubi-i-stoyki/ostrovnye-konstrukcii-basis/icons/build.png',
+        text: 'Быстрая перестройка без инструмента',
+    },
+    {
+        imageSrc:
+            '/trubi-i-stoyki/ostrovnye-konstrukcii-basis/icons/reassemble.png',
+        text: 'Возможность линейных и островных композиций',
+    },
+    {
+        imageSrc:
+            '/trubi-i-stoyki/ostrovnye-konstrukcii-basis/icons/safety.png',
+        text: 'Надёжная металлическая конструкция',
+    },
+    {
+        imageSrc: '/trubi-i-stoyki/ostrovnye-konstrukcii-basis/icons/style.png',
+        text: 'Стильные варианты покрытий: хром, силвер, сатин',
+    },
+];
+
+const COMPONENTS = [
+    {
+        title: 'Перфорированные стойки Basis',
+        items: [
+            'Размер: 40×40 мм (есть усиленная версия 50×50 мм)',
+            'Доступные пролёты: 600 / 900 / 1200 мм',
+            'Совместимы с любыми навесами, позволяя легко менять конфигурацию',
+        ],
+    },
+    {
+        title: 'Элементы крепления',
+        items: [
+            'П-образные и фронтальные кронштейны',
+            'Стяжки для стойки',
+            'Опоры (односторонние и двусторонние)',
+        ],
+    },
+    {
+        title: 'Покрытия',
+        items: [
+            'Хромированный блестящий',
+            'Силвер (серый матовый)',
+            'Сатин (декоративный металлик)',
+        ],
+    },
+];
+
+const OSTROVA = [
+    '/trubi-i-stoyki/ostrovnye-konstrukcii-basis/basis-ostrov-01.jpg',
+    '/trubi-i-stoyki/ostrovnye-konstrukcii-basis/basis-ostrov-02.jpg',
+    '/trubi-i-stoyki/ostrovnye-konstrukcii-basis/basis-ostrov-03.jpg',
+    '/trubi-i-stoyki/ostrovnye-konstrukcii-basis/basis-ostrov-04.jpg',
+];
+---
+
+<Layout title="Трубы и стойки">
+    <Container class="flex-col">
+        <h1 class="text-xl md:text-2xl font-semibold md:mb-8 mb-4 text-center">
+            Островные конструкции Basis
+        </h1>
+        <div
+            class="grid grid-cols-1 md:grid-cols-2 gap-5 text-lg md:text-xl font-medium mb-10 md:mb-20"
+        >
+            Универсальное и удобное решение для выкладки одежды и аксессуаров.
+            <br />
+            <br />
+            Система основана на перфорированных стойках и большом наборе навесных
+            элементов, что позволяет собирать конструкции под любые задачи магазина.
+
+            <Image
+                src="/trubi-i-stoyki/ostrovnye-konstrukcii-basis/ostrovnye-konstrukcii-basis.png"
+            />
+        </div>
+        <p class="text-xl md:text-2xl font-semibold md:mb-8 mb-4 text-center">
+            Преимущества системы Basis
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10 md:mb-20">
+            {
+                ADVANTAGES.map((advantage) => (
+                    <div
+                        key={advantage.text}
+                        class="flex items-center md:gap-6 gap-3"
+                    >
+                        <Image
+                            src={advantage.imageSrc}
+                            classList="min-w-[55px]"
+                        />
+                        {advantage.text}
+                    </div>
+                ))
+            }
+        </div>
+        <p class="text-xl md:text-2xl font-semibold md:mb-8 mb-4 text-center">
+            Из чего состоит система
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-10 md:mb-20">
+            {
+                COMPONENTS.map((component) => (
+                    <div
+                        key={component.title}
+                        class="flex flex-col gap-3 items-center md:gap-6 bg-main-color text-white rounded-[20px] p-6  text-base md:text-lg"
+                    >
+                        {component.title}
+
+                        <ul class="text-sm md:text-base self-start list-disc list-inside">
+                            {component.items.map((item) => (
+                                <li key={item}>{item}</li>
+                            ))}
+                        </ul>
+                    </div>
+                ))
+            }
+        </div>
+        <p class="text-xl md:text-2xl font-semibold md:mb-8 mb-4 text-center">
+            Конструктив и совместимость
+        </p>
+        <p>
+            Система Basis позволяет создавать как простые, так и сложные
+            острова.
+            <br />
+            Конструкции могут быть:
+            <ul class="list-disc list-inside my-3">
+                <li>односторонними</li>
+                <li>двусторонними</li>
+                <li>комбинированными с полками, штангами и навесами</li>
+            </ul>
+            Для сборки используется минимальное количество крепежа — всё легко переставляется
+            и адаптируется под магазин.
+            <br />
+
+            Также доступен аналогичный вариант на основе системы Master
+            (квадратные трубы 25×25 мм).
+        </p>
+        <div class="grid-cols-2-xs-3-lg-4">
+            {OSTROVA.map((ostrov) => <Image src={ostrov} />)}
+        </div>
+    </Container>
+</Layout>

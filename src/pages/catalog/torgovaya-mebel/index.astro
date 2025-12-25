@@ -1,0 +1,17 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Container from '@/shared/ui/Container.astro';
+
+import { CatalogBlock } from '@/widgets/pages/torgovaya-mebel';
+---
+
+<Layout title="Торговая мебель">
+    <Container class="flex-col">
+        <h1
+            class="text-lg md:text-2xl font-semibold md:mb-20 mb-10 text-center"
+        >
+            Торговая мебель
+        </h1>
+        <CatalogBlock />
+    </Container>
+</Layout>

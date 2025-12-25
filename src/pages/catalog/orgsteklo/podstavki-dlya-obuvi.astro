@@ -1,0 +1,15 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Container from '@/shared/ui/Container.astro';
+import { PodstavkiDlyaObuviGrid } from '@/widgets/pages/orgsteklo';
+---
+
+<Layout title="Подставки для обуви из оргстекла">
+    <Container class="flex-col">
+        <h1 class="text-xl md:text-2xl font-semibold md:mb-8 mb-4 text-center">
+            Подставки для обуви
+        </h1>
+        <PodstavkiDlyaObuviGrid client:load />
+    </Container>
+</Layout>
+

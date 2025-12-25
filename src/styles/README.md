@@ -19,7 +19,7 @@
 В Tailwind классах можно использовать:
 
 ```html
-<div class="bg-main-color text-grey-color">
+<div class="bg-main-color text-gray-color">
     <!-- Используем кастомные цвета -->
 </div>
 ```
@@ -27,8 +27,8 @@
 ### 2. Кастомные утилитные классы
 
 ```html
-<!-- Адаптивный грид: 1 колонка → 2 (xs) → 4 (lg) -->
-<div class="grid-cols-1-xs-2-lg-4 gap-4">
+<!-- Адаптивный грид: 2 колонки → 3 (xs) → 4 (lg) -->
+<div class="grid-cols2-xs-3-lg-4 gap-4">
     <div>Item 1</div>
     <div>Item 2</div>
     <!-- ... -->
@@ -45,8 +45,8 @@
 - `main-color` - #51993d
 - `main-color-2` - #85c450
 - `main-color-3` - #cddba2
-- `grey-color` - #eaebed
-- `grey-color-2` - #5c5c5c
+- `gray-color` - #eaebed
+- `gray-color-2` - #5c5c5c
 
 ### 4. Breakpoints
 

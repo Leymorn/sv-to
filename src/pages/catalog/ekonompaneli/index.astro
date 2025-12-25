@@ -1,0 +1,20 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Container from '@/shared/ui/Container.astro';
+import {
+    TextAndImage,
+    EkonompaneliConfigurator,
+    VstavkiStendyAksessuarySwitch,
+} from '@/widgets/pages/ekonompaleni';
+---
+
+<Layout title="Ekonompaneli">
+    <Container class="flex-col">
+        <h1 class="md:text-2xl text-xl font-semibold md:mb-8 mb-4 text-center">
+            Экономпанели
+        </h1>
+        <TextAndImage />
+        <EkonompaneliConfigurator client:load />
+        <VstavkiStendyAksessuarySwitch client:load />
+    </Container>
+</Layout>

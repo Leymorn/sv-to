@@ -1,0 +1,14 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Container from '@/shared/ui/Container.astro';
+import { VerticalGrid } from '@/widgets/pages/trubi-i-stoyki';
+---
+
+<Layout title="Система Vertical (Вертикаль)">
+    <Container class="flex-col">
+        <h1 class="text-xl md:text-2xl font-semibold md:mb-16 mb-8 text-center">
+            Система Vertical (Вертикаль)
+        </h1>
+        <VerticalGrid client:load />
+    </Container>
+</Layout>

@@ -1,5 +1,5 @@
-import Image from '@/widgets/shared/ui/Image';
-import Link from '@/widgets/shared/ui/Link';
+import Image from '@/shared/ui/Image';
+import Link from '@/shared/ui/Link';
 
 export default function LogisticsBlock() {
     return (
@@ -25,13 +25,14 @@ export default function LogisticsBlock() {
                     упаковка
                 </div>
             </div>
-            {/* TODO: add link */}
+            {/* TODO: add link 
             <Link
                 href="/"
                 type="outline"
                 text="Возможные причины увеличения сроков"
                 classList="w-fit mx-auto text-center italic"
             />
+            */}
         </>
     );
 }

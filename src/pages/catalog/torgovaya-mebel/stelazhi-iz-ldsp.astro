@@ -1,0 +1,14 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Container from '@/shared/ui/Container.astro';
+import { StelazhiGrid } from '@/widgets/pages/torgovaya-mebel';
+---
+
+<Layout title="Стеллажи из ЛДСП">
+    <Container class="flex-col">
+        <h1 class="md:text-2xl text-xl font-semibold md:mb-8 mb-4 text-center">
+            Стеллажи из ЛДСП
+        </h1>
+        <StelazhiGrid client:load />
+    </Container>
+</Layout>

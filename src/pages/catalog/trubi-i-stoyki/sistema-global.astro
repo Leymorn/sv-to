@@ -1,0 +1,14 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Container from '@/shared/ui/Container.astro';
+import { GlobalGrid } from '@/widgets/pages/trubi-i-stoyki';
+---
+
+<Layout title="Система Global (Глобал)">
+    <Container class="flex-col">
+        <h1 class="text-xl md:text-2xl font-semibold md:mb-16 mb-8 text-center">
+            Система Global (Глобал)
+        </h1>
+        <GlobalGrid client:load />
+    </Container>
+</Layout>

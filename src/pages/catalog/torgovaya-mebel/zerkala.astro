@@ -1,0 +1,35 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Container from '@/shared/ui/Container.astro';
+import Image from '@/shared/ui/Image';
+import Link from '@/shared/ui/Link';
+import { ROUTES } from '@/shared/router/routes';
+import { ZerkalaProductsGrid } from '@/widgets/pages/zerkala';
+---
+
+<Layout title="Зеркала для магазинов">
+    <Container class="flex-col">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10 md:mb-20">
+            <div class="text-lg md:text-xl font-medium flex flex-col gap-5">
+                <h1 class="md:text-2xl text-xl font-semibold md:mb-8 mb-4">
+                    Зеркала
+                </h1>
+                В каталоге представлены напольные зеркала на колёсах для торговых
+                залов и шоу-румов, а также компактные зеркала для обуви. Конструкции
+                изготавливаются на каркасе из стальных труб и оснащаются устойчивым
+                основанием с поворотными роликами.
+                <br />
+                В качестве отделки доступны различные цвета металла — от хрома и
+                «чёрного муара» до золотого анодирования. Любое зеркало можно адаптировать
+                под ваш проект: изменить габариты, добавить полочку или брендирование.
+            </div>
+            <Image
+                src="/zerkala/zerkala-index.png"
+                alt="Зеркала для магазинов"
+                classList="w-full h-full object-cover max-h-[400px]"
+                imageClassList="object-cover w-full"
+            />
+        </div>
+        <ZerkalaProductsGrid />
+    </Container>
+</Layout>

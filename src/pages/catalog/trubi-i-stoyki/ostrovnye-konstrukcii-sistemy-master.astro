@@ -1,0 +1,19 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Container from '@/shared/ui/Container.astro';
+import { OstrovnyeKonstrukciiGrid } from '@/widgets/pages/trubi-i-stoyki';
+---
+
+<Layout title="Выставочные конструкции системы Master">
+    <Container class="flex-col">
+        <h1 class="text-xl md:text-2xl font-semibold md:mb-6 mb-3 text-center">
+            Выставочные конструкции с использованием системы Master
+        </h1>
+        <p class="text-center text-base mx-auto max-w-[1062px] md:mb-10 mb-6">
+            Конструкции просчитаны без стекла (возможны варианты 5 мм, 8 мм, 6
+            мм, 4 мм — матированное). Цвет: хром (возможен silver, сатин). Труба
+            20х20 мм. Размеры возможны любые.
+        </p>
+        <OstrovnyeKonstrukciiGrid client:load />
+    </Container>
+</Layout>

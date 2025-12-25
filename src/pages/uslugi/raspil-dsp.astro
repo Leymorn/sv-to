@@ -1,0 +1,38 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Container from '@/shared/ui/Container.astro';
+import Image from '@/shared/ui/Image';
+import { RaspilDspPricesTable } from '@/widgets/pages/raspil-dsp';
+import {
+    RASPIL_DSP_PRICES,
+    RASPIL_DSP_FACADE_PRICES,
+} from '@/widgets/pages/raspil-dsp/model/prices';
+---
+
+<Layout title="Raspil Dsp">
+    <Container class="flex-col">
+        <div
+            class="grid grid-cols-1 md:grid-cols-2 gap-5 text-lg md:text-xl font-medium mb-10 md:mb-20"
+        >
+            <div class="flex flex-col gap-5">
+                <h1 class="text-xl md:text-2xl font-semibold">Распил ДСП</h1>
+                Идеальные детали — с первого реза. Распилим ламинированные ДСП под
+                ваши размеры: быстро, точно и без сколов.
+                <br /> Работаем с плитами стандратного размера 2750×1830 мм и другими
+                материалами — ЛДСП, МДФ, ДВП, фанерой.
+                <br /> Здесь вы можете ознакомиться с ценами на распил и кромкование.
+            </div>
+
+            <Image src="/raspil-dsp/dsp.png" alt="Raspil Dsp" />
+        </div>
+        <RaspilDspPricesTable prices={RASPIL_DSP_PRICES} />
+        <RaspilDspPricesTable
+            title="Изготовление фасадов:"
+            prices={RASPIL_DSP_FACADE_PRICES}
+        />
+
+        <p class="text-lg md:text-xl font-medium">
+            *, ** детали размером более 2200 мм – «+» 50% за распил с листа
+        </p>
+    </Container>
+</Layout>

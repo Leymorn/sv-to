@@ -1,0 +1,19 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Container from '@/shared/ui/Container.astro';
+import { JokerSystemsSwitch } from '@/widgets/pages/trubi-i-stoyki';
+---
+
+<Layout title="Система труб Joker">
+    <Container class="flex-col">
+        <h1 class="text-xl md:text-2xl font-semibold md:mb-6 mb-3 text-center">
+            Система труб Joker
+        </h1>
+        <p class="text-center text-base mx-auto max-w-[820px] md:mb-12 mb-8">
+            Выберите нужное направление системы труб: стандартные элементы
+            Joker, варианты UNO или колонны. Нажмите на кнопку, чтобы увидеть
+            каталог комплектующих и их характеристики.
+        </p>
+        <JokerSystemsSwitch client:load />
+    </Container>
+</Layout>

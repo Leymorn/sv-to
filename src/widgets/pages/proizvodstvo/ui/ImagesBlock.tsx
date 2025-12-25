@@ -1,4 +1,4 @@
-import Image from '@/widgets/shared/ui/Image';
+import Image from '@/shared/ui/Image';
 import { IMAGES } from '../model/images';
 
 const ImageItem = ({ imageSrc, text }: { imageSrc: string; text: string }) => {
@@ -13,7 +13,7 @@ const ImageItem = ({ imageSrc, text }: { imageSrc: string; text: string }) => {
 export default function ImagesBlock() {
     // TODO: add carousel
     return (
-        <div className="grid-cols-1-xs-2-lg-4 gap-5 md:mb-20 mb-10">
+        <div className="grid-cols-2-xs-3-lg-4 gap-5 md:mb-20 mb-10">
             {IMAGES.map((image) => (
                 <ImageItem key={image.imageSrc} {...image} />
             ))}

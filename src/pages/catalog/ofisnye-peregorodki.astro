@@ -1,0 +1,112 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Container from '@/shared/ui/Container.astro';
+import Image from '@/shared/ui/Image';
+import Link from '@/shared/ui/Link';
+import { ROUTES } from '@/shared/router/routes';
+import { Icon } from 'astro-icon/components';
+
+const REASONS = [
+    'Зонирование пространства без капитального ремонта',
+    'Больше света и визуального воздуха',
+    'Комфорт сотрудников и снижение шума',
+    'Гибкость при изменении планировки',
+];
+
+const VARIANTS = [
+    {
+        title: 'Комбинированные',
+        text: 'Сочетают стекло и глухие панели. Оптимальный вариант, когда нужна и приватность, и свет. Часто используются в рабочих кабинетах, зонах приёма и офисах с разными сценариями работы.',
+        imageSrc: '/catalog/ofisnye-peregorodki/combine.png',
+    },
+    {
+        title: 'Стеклянные',
+        text: 'Пропускают свет и визуально расширяют пространство. Подходят для офисов с открытой планировкой, переговорных и кабинетов руководителей. Создают ощущение прозрачности и современного офиса, при этом сохраняют зонирование.',
+        imageSrc: '/catalog/ofisnye-peregorodki/glass.png',
+    },
+    {
+        title: 'Глухие',
+        text: 'Обеспечивают максимальную изоляцию и комфорт для сосредоточенной работы. Подходят для кабинетов, бухгалтерии, переговорных и помещений, где важна тишина и приватность.',
+        imageSrc: '/catalog/ofisnye-peregorodki/gluhie.png',
+    },
+    {
+        title: 'Мобильные',
+        text: 'Лёгкое и гибкое решение для быстрого зонирования. Можно переставлять и менять конфигурацию без демонтажа. Подходят для временных рабочих зон, open space и быстро растущих команд.',
+        imageSrc: '/catalog/ofisnye-peregorodki/mobile.png',
+    },
+];
+---
+
+<Layout title="Офисные перегородки">
+    <Container class="flex-col">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10 md:mb-20">
+            <div class="text-lg md:text-xl font-medium flex flex-col gap-5">
+                <h1 class="text-xl md:text-2xl font-semibold">
+                    Офисные перегородки
+                </h1>
+                Проектирование, производство и монтаж.Любая конфигурация, стекло
+                и ЛДСП, от одного кабинета до всего офиса.
+                <Link
+                    type="outline"
+                    href={ROUTES.KONTAKTY}
+                    classList="md:text-lg text-base mt-auto w-fit"
+                    text="Рассчитать стоимость"
+                />
+            </div>
+            <Image
+                src="/catalog/ofisnye-peregorodki/ofisnye-peregorodki.png"
+                alt="Перегородки"
+                classList="w-full h-full object-cover"
+            />
+        </div>
+        <p class="text-lg md:text-xl font-medium text-center mb-4 md:mb-8">
+            Зачем нужны офисные перегородки
+        </p>
+        <div
+            class="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-5 max-w-[1000px] self-center mb-10 md:mb-20"
+        >
+            {
+                REASONS.map((reason) => (
+                    <div class="flex gap-5 max-w-[500px]">
+                        <Icon
+                            name="check"
+                            class="text-main-color min-w-[54px]"
+                            size="36"
+                        />
+                        {reason}
+                    </div>
+                ))
+            }
+        </div>
+        <p class="text-lg md:text-xl font-medium text-center mb-4 md:mb-8">
+            Какие бывают
+        </p>
+        <div class="grid-cols-2-xs-3-lg-4 gap-2 mb-10 md:mb-20">
+            {
+                VARIANTS.map((variant) => (
+                    <div class="text-base md:text-xl font-medium flex flex-col gap-4">
+                        <Image
+                            src={variant.imageSrc}
+                            alt={variant.title}
+                            classList="w-full min-w-[150px] object-contain"
+                        />
+                        {variant.title}
+                        <p class="text-sm md:text-base font-normal">
+                            {variant.text}
+                        </p>
+                    </div>
+                ))
+            }
+        </div>
+        <p class="text-lg md:text-xl font-medium text-center mb-4 md:mb-8">
+            Почему выбирают нас
+        </p>
+        <p class="text-center">
+            Мы производим офисные перегородки под конкретные задачи и помещения.
+            Работаем без посредников, быстро монтируем и аккуратно подгоняем
+            конструкции под существующий интерьер. Наши перегородки легко
+            адаптируются под изменения офиса и служат долго без сложного
+            обслуживания.
+        </p>
+    </Container>
+</Layout>
