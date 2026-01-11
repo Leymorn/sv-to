@@ -2,12 +2,17 @@ import Image from '@/shared/ui/Image';
 import type { Product } from '../types/product';
 
 function formatPrice(
-    price: number | undefined,
+    price: number | string | null | undefined,
     priceLabel: string | undefined
 ) {
-    return price
-        ? `${price.toLocaleString('ru-RU')} ₽`
-        : priceLabel || 'Цена по запросу';
+    if (typeof price === 'number' && Number.isFinite(price)) {
+        return `${price.toLocaleString('ru-RU')} ₽`;
+    }
+    if (typeof price === 'string' && price.trim()) {
+        // Оставляем как есть (часто это диапазон типа "1000 - 2600")
+        return price.trim();
+    }
+    return priceLabel || 'Цена по запросу';
 }
 
 export default function ProductCard({

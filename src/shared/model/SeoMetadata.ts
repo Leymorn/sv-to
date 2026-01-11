@@ -1,8 +1,12 @@
 export interface SeoMetadata {
     /** Заголовок страницы (используется в title и og:title) */
     title: string;
+    /** Переопределение og:title (если нужно отличаться от title) */
+    ogTitle?: string;
     /** Описание страницы (используется в meta description и og:description) */
     description?: string;
+    /** Переопределение og:description (если нужно отличаться от description) */
+    ogDescription?: string;
     /** Изображение для Open Graph (путь относительно public или полный URL) */
     image?: string;
     /** Альтернативный текст для изображения */
@@ -25,6 +29,10 @@ export interface SeoMetadata {
     modifiedTime?: string;
     /** Twitter карточка тип */
     twitterCard?: 'summary' | 'summary_large_image' | 'app' | 'player';
+    /** Переопределение twitter:title */
+    twitterTitle?: string;
+    /** Переопределение twitter:description */
+    twitterDescription?: string;
     /** Twitter handle (например, '@username') */
     twitterSite?: string;
     /** Twitter creator */

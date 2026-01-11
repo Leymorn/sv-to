@@ -4,6 +4,7 @@ import { ROUTES } from '@/shared/router/routes';
 import Container from '@/shared/ui/Container.astro';
 import Image from '@/shared/ui/Image';
 import Link from '@/shared/ui/Link';
+import type { SeoMetadata } from '@/shared/model/SeoMetadata';
 
 const COMPONENTS = [
     {
@@ -32,9 +33,18 @@ const STAGES = [
     'Производство',
     'Монтаж',
 ];
----
 
-<Layout title="Services">
+const seo: SeoMetadata = {
+    title: "Дизайн магазина и торговых помещений | СВ - торговое оборудование в Санкт-Петербурге",
+    description: "Услуги дизайнера в производстве торгового оборудования. Изготовление мебели на заказ по дизайн-проектам, услуга \"дизайн под ключ\" и \"магазин под ключ\".",
+    keywords: "дизайн магазина,торговый дизайн,дизайн-проект магазина,проект магазина",
+    ogTitle: "Дизайн магазина",
+    ogDescription: "Разработка дизайна магазина (торговый дизайн) – немаловажная задача на пути к открытию торговой точки. Наша команда квалифицированных дизайнеров предлагает клиенту данную услугу, что помогает не только помочь с оформлением торговой площади, разработкой визуального стиля магазина и торгового оборудования. Но и, благодаря огромному опыту, избавит от множества ошибок на старте, позволит овладеть современными продающими приёмами в [...]",
+    image: "/og-images/uslugi-dizayn-magazina.png",
+    imageAlt: "Дизайн магазина и торговых помещений | СВ - торговое оборудование в Санкт-Петербурге",
+};
+---
+<Layout seo={seo}>
     <Container class="flex-col">
         <h1 class="text-xl md:text-2xl font-semibold mb-4 md:mb-4 text-center">
             Дизайн магазина

@@ -9,7 +9,6 @@ import Link from '../Link';
         PHONE_CONTACTS.map((phone, index) => (
             <Link
                 href={phone.href}
-                key={index}
                 text={phone.name}
                 type="flat"
                 classList="flex items-center gap-3 "
@@ -33,7 +32,6 @@ import Link from '../Link';
     {
         SOCIAL_LINKS.map((socialLink, index) => (
             <Link
-                key={index}
                 href={socialLink.href}
                 text={socialLink.label}
                 type="flat"

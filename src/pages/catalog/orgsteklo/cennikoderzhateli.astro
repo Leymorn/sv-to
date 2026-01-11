@@ -3,9 +3,17 @@ import Layout from '@/layouts/Layout.astro';
 import Container from '@/shared/ui/Container.astro';
 import Image from '@/shared/ui/Image';
 import { CennikoderzhateliGrid } from '@/widgets/pages/orgsteklo';
----
+import type { SeoMetadata } from '@/shared/model/SeoMetadata';
 
-<Layout title="Ценникодержатели">
+const seo: SeoMetadata = {
+    title: "Проекты в категории Ценникодержатели | СВ - торговое оборудование в Санкт-Петербурге",
+    ogTitle: "Категория: Ценникодержатели",
+    ogDescription: "Производство и продажа торгового оборудования для магазинов в Санкт-Петербурге, выгодные предложения для желающих купить экономпанели, вешала, стеллажи, манекены, мебельные фасады.",
+    image: "/og-images/catalog-orgsteklo-cennikoderzhateli.png",
+    imageAlt: "Проекты в категории Ценникодержатели | СВ - торговое оборудование в Санкт-Петербурге",
+};
+---
+<Layout seo={seo}>
     <Container class="flex-col">
         <h1 class="text-xl md:text-2xl font-semibold md:mb-8 mb-4 text-center">
             Ценникодержатели

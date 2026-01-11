@@ -2,9 +2,19 @@
 import Layout from '@/layouts/Layout.astro';
 import Container from '@/shared/ui/Container.astro';
 import { AksessuaryPanelsSwitch } from '@/widgets/pages/aksessuary-dlya-ekonompaneli';
----
+import type { SeoMetadata } from '@/shared/model/SeoMetadata';
 
-<Layout title="Аксессуары к экономпанелям">
+const seo: SeoMetadata = {
+    title: "Купить экономпанели, мебель из экономпанелей и фурнитуру | СВ - торговое оборудование в Санкт-Петербурге",
+    description: "Экономпанели, кросспанели, стенды с экономпанелями. Широкий ассортимент навески для экономпанелей в цветах цинк и хром. Панели для торговли из МДФ и пластика.",
+    keywords: "экономпанель,эконом-панель,купить экономпанель",
+    ogTitle: "Экономпанели и аксессуары",
+    ogDescription: "Вставки в экономпанели Пластиковые вставки в пазы Цвета: белый / чёрный / серый / крем / древесный / коричневый 390 руб. – комплект (17 шт.) для панели 1200×1800 мм 530 руб. – комплект (23 шт.) для панели 1200×2400 мм Цвета: красный / оранжевый / жёлтый / фуксия / синий 580 руб. – комплект (23 шт.) [...]",
+    image: "/og-images/catalog-ekonompaneli-aksessuary.png",
+    imageAlt: "Купить экономпанели, мебель из экономпанелей и фурнитуру | СВ - торговое оборудование в Санкт-Петербурге",
+};
+---
+<Layout seo={seo}>
     <Container class="flex-col">
         <h1 class="md:text-2xl text-xl font-semibold md:mb-8 mb-4 text-center">
             Аксессуары для экономпанели

@@ -4,15 +4,25 @@ import Container from '@/shared/ui/Container.astro';
 import Link from '@/shared/ui/Link.tsx';
 import { ROUTES } from '@/shared/router/routes';
 import Image from '@/shared/ui/Image.tsx';
+import type { SeoMetadata } from '@/shared/model/SeoMetadata';
 import {
     SuitableForBlock,
     StagesBlock,
     AdvantagesBlock,
     RequestBlock,
 } from '@/widgets/pages/torgovoe-oborudovanie';
----
 
-<Layout title="Торговое оборудование">
+const seo: SeoMetadata = {
+    title: "Торговое оборудование для гуру оптики | СВ - торговое оборудование в Санкт-Петербурге",
+    description: "Проект торгового оборудования для сети салонов оптики: стеновые панели с держателями для оправ, накопители и навигация, островная кассовая стойка и полки на экономпанелях для аксессуаров для оптики. Также оборудован кабинет врача-офтальмолога. Монтаж производился в г, Калининград.",
+    keywords: "Кассовая стойка / ресепшн,Экономпанели,Салоны оптики",
+    ogTitle: "Торговое оборудование для гуру оптики",
+    ogDescription: "Наш постоянный клиент, ширящий сеть салонов оптики в Северо-Западном регионе. Салон в Калининграде: сформированная концепция торгового оборудования для оптики и аксессуаров.",
+    image: "/og-images/uslugi-torgovoe-oborudovanie.png",
+    imageAlt: "Торговое оборудование для гуру оптики | СВ - торговое оборудование в Санкт-Петербурге",
+};
+---
+<Layout seo={seo}>
     <Container class="flex-col">
         <div
             class="grid grid-cols-1 md:grid-cols-2 justify-center gap-5 md:my-10 my-5"

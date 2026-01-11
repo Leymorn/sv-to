@@ -7,6 +7,7 @@ import CategoryRibbon from '@/shared/ui/category-ribbon/CategoryRibbon.tsx';
 import { ROUTES } from '@/shared/router/routes';
 import { CATALOG_LINKS_WITH_IMAGES } from '@/shared/model/CatalogLinksWithImages';
 import { SERVICES_LIST_WITH_IMAGES } from '@/shared/model/ServicesListWithImages';
+import type { SeoMetadata } from '@/shared/model/SeoMetadata';
 
 const images = [
     '/banner_0.png',
@@ -16,9 +17,18 @@ const images = [
     '/banner_1.png',
     '/banner_2.png',
 ];
----
 
-<Layout title="About">
+const seo: SeoMetadata = {
+    title: "О производственной компании \"СВ\" - торговое обоурдование | СВ - торговое оборудование в Санкт-Петербурге",
+    description: "СВ-ТО занимается изготовлением и продажей торгового оборудования и мебели, предоставляет услуги по дизайну мебели, распилу ДСП, изготовлению мебельных фасадов.",
+    keywords: "О компании СВ-ТО",
+    ogTitle: "О компании",
+    ogDescription: "Компания «СВ» является одним из крупнейших производителей торгового оборудования в Санкт-Петербурге и ЛО. Начиная с 2000-го года, мы успешно изготавливаем оборудование для магазина на заказ и производим его монтаж. За эти годы площадь производственных цехов «СВ» расширялась несколько раз, а на данный момент составляет более 1200 кв.м., включая стекольную мастерскую и цех по изготовлению мебельных [...]",
+    image: "/og-images/about.png",
+    imageAlt: "О производственной компании \"СВ\" - торговое обоурдование | СВ - торговое оборудование в Санкт-Петербурге",
+};
+---
+<Layout seo={seo}>
     <Container class="flex-col">
         <h1 class="text-lg md:text-2xl font-semibold md:mb-8 mb-5">
             О компании

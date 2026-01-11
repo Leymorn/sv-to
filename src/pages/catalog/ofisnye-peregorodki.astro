@@ -5,6 +5,7 @@ import Image from '@/shared/ui/Image';
 import Link from '@/shared/ui/Link';
 import { ROUTES } from '@/shared/router/routes';
 import { Icon } from 'astro-icon/components';
+import type { SeoMetadata } from '@/shared/model/SeoMetadata';
 
 const REASONS = [
     'Зонирование пространства без капитального ремонта',
@@ -35,9 +36,17 @@ const VARIANTS = [
         imageSrc: '/catalog/ofisnye-peregorodki/mobile.png',
     },
 ];
----
 
-<Layout title="Офисные перегородки">
+const seo: SeoMetadata = {
+    title: "Заказать офисные перегородки и мебель для офиса | СВ - торговое оборудование в Санкт-Петербурге",
+    description: "Мебельное производство предлагает купить офисные перегородки из алюминиевых систем и ДСП, мобильные и стандартные стенды и офисную мебель на заказ.",
+    ogTitle: "Офисные перегородки",
+    ogDescription: "Офисные перегородки – удобное и практичное решение для организации пространства офисного помещения. С помощью перегородок из алюминиевого профиля вы можете разделить большое помещение на кабинеты, отгородить переговорную комнату, обеспечить сотрудникам отдельное изолированное место для работы. Офисные перегородки обладают определенной степенью изоляции, но могут быть полностью или частично прозрачными, что расширит ощущение пространства в небольшом кабинете, [...]",
+    image: "/og-images/catalog-ofisnye-peregorodki.png",
+    imageAlt: "Заказать офисные перегородки и мебель для офиса | СВ - торговое оборудование в Санкт-Петербурге",
+};
+---
+<Layout seo={seo}>
     <Container class="flex-col">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10 md:mb-20">
             <div class="text-lg md:text-xl font-medium flex flex-col gap-5">

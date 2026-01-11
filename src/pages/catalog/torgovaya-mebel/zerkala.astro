@@ -5,9 +5,19 @@ import Image from '@/shared/ui/Image';
 import Link from '@/shared/ui/Link';
 import { ROUTES } from '@/shared/router/routes';
 import { ZerkalaProductsGrid } from '@/widgets/pages/zerkala';
----
+import type { SeoMetadata } from '@/shared/model/SeoMetadata';
 
-<Layout title="Зеркала для магазинов">
+const seo: SeoMetadata = {
+    title: "Торговая мебель | СВ - торговое оборудование в Санкт-Петербурге",
+    description: "Торговая мебель для магазинов от компании СВ – это изготовление торгового оборудования на заказ: прилавки, витрины, стеллажи, стойки ресепшн, выставочное оборудование. Производство более 1200 кв.м., работаем с 2000-го года.",
+    keywords: "торговая мебель,мебель для магазина,торговая мебель спб",
+    ogTitle: "Архивы: Торговая мебель",
+    ogDescription: "Производство и продажа торгового оборудования для магазинов в Санкт-Петербурге, выгодные предложения для желающих купить экономпанели, вешала, стеллажи, манекены, мебельные фасады.",
+    image: "/og-images/catalog-torgovaya-mebel-zerkala.png",
+    imageAlt: "Торговая мебель | СВ - торговое оборудование в Санкт-Петербурге",
+};
+---
+<Layout seo={seo}>
     <Container class="flex-col">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10 md:mb-20">
             <div class="text-lg md:text-xl font-medium flex flex-col gap-5">

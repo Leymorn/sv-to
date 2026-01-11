@@ -2,6 +2,7 @@
 import Layout from '@/layouts/Layout.astro';
 import Container from '@/shared/ui/Container.astro';
 import Image from '@/shared/ui/Image';
+import type { SeoMetadata } from '@/shared/model/SeoMetadata';
 
 const ADVANTAGES = [
     {
@@ -67,9 +68,17 @@ const OSTROVA = [
     '/trubi-i-stoyki/ostrovnye-konstrukcii-basis/basis-ostrov-03.jpg',
     '/trubi-i-stoyki/ostrovnye-konstrukcii-basis/basis-ostrov-04.jpg',
 ];
----
 
-<Layout title="Трубы и стойки">
+const seo: SeoMetadata = {
+    title: "Купить joker, master, basis, slim, vertical, global | СВ - торговое оборудование в Санкт-Петербурге",
+    description: "Системы труб для торговли joker и master, а также перфорированные стойки basis, slim, vertical и global недорого. Продажа в Санкт-Петербурге.",
+    ogTitle: "Трубы и стойки",
+    ogDescription: "Вы можете приехать и купить любое количество имеющихся на складе элементов любой из этих систем. Наши сборщики при необходимости помогут Вам собрать оборудование из выбранного конструктора.   Системы труб Системы Joker и Master - это металлические трубы длиной 3 метра с набором крепежей и навесных элементов в ассортименте. Joker – хромированные трубы круглого сечения, Master [...]",
+    image: "/og-images/catalog-trubi-i-stoyki-ostrovnye-konstrukcii-basis.png",
+    imageAlt: "Купить joker, master, basis, slim, vertical, global | СВ - торговое оборудование в Санкт-Петербурге",
+};
+---
+<Layout seo={seo}>
     <Container class="flex-col">
         <h1 class="text-xl md:text-2xl font-semibold md:mb-8 mb-4 text-center">
             Островные конструкции Basis
@@ -94,7 +103,6 @@ const OSTROVA = [
             {
                 ADVANTAGES.map((advantage) => (
                     <div
-                        key={advantage.text}
                         class="flex items-center md:gap-6 gap-3"
                     >
                         <Image
@@ -113,14 +121,13 @@ const OSTROVA = [
             {
                 COMPONENTS.map((component) => (
                     <div
-                        key={component.title}
                         class="flex flex-col gap-3 items-center md:gap-6 bg-main-color text-white rounded-[20px] p-6  text-base md:text-lg"
                     >
                         {component.title}
 
                         <ul class="text-sm md:text-base self-start list-disc list-inside">
                             {component.items.map((item) => (
-                                <li key={item}>{item}</li>
+                                <li>{item}</li>
                             ))}
                         </ul>
                     </div>

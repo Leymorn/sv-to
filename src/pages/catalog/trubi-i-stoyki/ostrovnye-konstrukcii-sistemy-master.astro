@@ -2,9 +2,18 @@
 import Layout from '@/layouts/Layout.astro';
 import Container from '@/shared/ui/Container.astro';
 import { OstrovnyeKonstrukciiGrid } from '@/widgets/pages/trubi-i-stoyki';
----
+import type { SeoMetadata } from '@/shared/model/SeoMetadata';
 
-<Layout title="Выставочные конструкции системы Master">
+const seo: SeoMetadata = {
+    title: "Купить joker, master, basis, slim, vertical, global | СВ - торговое оборудование в Санкт-Петербурге",
+    description: "Системы труб для торговли joker и master, а также перфорированные стойки basis, slim, vertical и global недорого. Продажа в Санкт-Петербурге.",
+    ogTitle: "Трубы и стойки",
+    ogDescription: "Вы можете приехать и купить любое количество имеющихся на складе элементов любой из этих систем. Наши сборщики при необходимости помогут Вам собрать оборудование из выбранного конструктора.   Системы труб Системы Joker и Master - это металлические трубы длиной 3 метра с набором крепежей и навесных элементов в ассортименте. Joker – хромированные трубы круглого сечения, Master [...]",
+    image: "/og-images/catalog-trubi-i-stoyki-ostrovnye-konstrukcii-sistemy-master.png",
+    imageAlt: "Купить joker, master, basis, slim, vertical, global | СВ - торговое оборудование в Санкт-Петербурге",
+};
+---
+<Layout seo={seo}>
     <Container class="flex-col">
         <h1 class="text-xl md:text-2xl font-semibold md:mb-6 mb-3 text-center">
             Выставочные конструкции с использованием системы Master

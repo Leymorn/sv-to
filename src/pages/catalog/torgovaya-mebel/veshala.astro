@@ -3,9 +3,18 @@ import Layout from '@/layouts/Layout.astro';
 import Container from '@/shared/ui/Container.astro';
 import Image from '@/shared/ui/Image';
 import { VeshalaProductsSwitch } from '@/widgets/pages/veshala';
----
+import type { SeoMetadata } from '@/shared/model/SeoMetadata';
 
-<Layout title="Вешала серии HOME">
+const seo: SeoMetadata = {
+    title: "Каталог торгового оборудования для магазина одежды | СВ - торговое оборудование в Санкт-Петербурге",
+    description: "Предлагаем купить женские и мужские манекены для одежды, портновские манекены, головы, торсы, детские манекены, вешала для одежды, мобильные зеркала, стендеры.",
+    ogTitle: "Манекены, вешала, зеркала",
+    ogDescription: "Манекены - Оборудование с человеческим лицом. Манекен сегодня является важнейшим торговым оборудованием, при помощи которого покупателю показывают товар \"лицом\". Манекены и торсы создают объемное представление об одежде, они эффектно и ярко представляют новинки, привлекают внимание к распродажам. Вешала, вешалки и плечики - сегодня действительно используется повсеместно, однако, подход к его выбору в среде владельцев торговых [...]",
+    image: "/og-images/catalog-torgovaya-mebel-veshala.png",
+    imageAlt: "Каталог торгового оборудования для магазина одежды | СВ - торговое оборудование в Санкт-Петербурге",
+};
+---
+<Layout seo={seo}>
     <Container class="flex-col">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10 md:mb-20">
             <h1 class="md:text-2xl text-xl font-semibold">Вешала</h1>

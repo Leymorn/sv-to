@@ -4,9 +4,19 @@ import Container from '@/shared/ui/Container.astro';
 import { CatalogList } from '@/widgets/pages/catalog';
 import { ROUTES } from '@/shared/router/routes';
 import Link from '@/shared/ui/Link.tsx';
----
+import type { SeoMetadata } from '@/shared/model/SeoMetadata';
 
-<Layout title="Catalog and Prices">
+const seo: SeoMetadata = {
+    title: "Каталог с ценами торгового оборудования | СВ - торговое оборудование в Санкт-Петербурге",
+    description: "Производство торговой мебели, мебельные фасады. Продажа торговых систем труб и стоек, экономпанелей, манекенов, вешал, зеркал.",
+    keywords: "Каталог и цены СВ-ТО",
+    ogTitle: "Каталоги и цены",
+    ogDescription: "Основное направление деятельности нашей компании — производство торгового оборудования (мебели) на заказ. Также мы занимаемся продажей разных торговых систем и элементов оборудования для магазинов. На этой странице Вы можете ознакомиться с ценами на нашу продукцию. В нашей компании действуют интересные скидки для дилеров на мелкий и крупный опт. Изделия из оргстекла Собственное производство изделий из [...]",
+    image: "/og-images/catalog.png",
+    imageAlt: "Каталог с ценами торгового оборудования | СВ - торговое оборудование в Санкт-Петербурге",
+};
+---
+<Layout seo={seo}>
     <Container class="flex-col">
         <h1 class="pb-8 text-[24px] font-semibold">Каталоги и цены</h1>
         <div class="flex flex-col md:flex-row gap-5 pb-12">

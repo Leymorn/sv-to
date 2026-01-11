@@ -2,6 +2,7 @@
 import Layout from '@/layouts/Layout.astro';
 import Container from '@/shared/ui/Container.astro';
 import Carousel from '@/shared/ui/carousel/Carousel.tsx';
+import type { SeoMetadata } from '@/shared/model/SeoMetadata';
 import {
     ORGSTEKLO_PROJECTS_IMAGES,
     FANERA_PROJECTS_IMAGES,
@@ -9,9 +10,17 @@ import {
     FANERA_PRICES,
     PricesBlock,
 } from '@/widgets/pages/lazernaya-rezka-i-gravirovka';
----
 
-<Layout title="Lazernaya Rezka I Gravirovka">
+const seo: SeoMetadata = {
+    title: "Лазерная резка и гравировка | СВ - торговое оборудование в Санкт-Петербурге",
+    description: "Цены на лазерную резку Оргстекло (акрил), плексиглас Толщина Резка 1 мм 15 р./м. реза 2 мм 18 р./м. реза 3 мм 22 р./м. реза 4 мм 29 р./м. реза 5 мм 31 р./м.",
+    ogTitle: "Лазерная резка и гравировка",
+    ogDescription: "Цены на лазерную резку Оргстекло (акрил), плексиглас Толщина Резка 1 мм 15 р./м. реза 2 мм 18 р./м. реза 3 мм 22 р./м. реза 4 мм 29 р./м. реза 5 мм 31 р./м. реза 6 мм 38 р./м. реза 8 мм 60 р./м. реза 10 мм 85 р./м. реза Фанера Толщина Резка 3 мм 21 [...]",
+    image: "/og-images/uslugi-lazernaya-rezka-i-gravirovka.png",
+    imageAlt: "Лазерная резка и гравировка | СВ - торговое оборудование в Санкт-Петербурге",
+};
+---
+<Layout seo={seo}>
     <Container class="flex-col">
         <h1 class="md:text-2xl text-xl font-semibold md:mb-8 mb-4 text-center">
             Лазерная резка и гравировка

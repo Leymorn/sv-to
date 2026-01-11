@@ -2,9 +2,19 @@
 import Layout from '@/layouts/Layout.astro';
 import Container from '@/shared/ui/Container.astro';
 import { SteklyannyeVitrinyGrid } from '@/widgets/pages/torgovaya-mebel';
----
+import type { SeoMetadata } from '@/shared/model/SeoMetadata';
 
-<Layout title="Стеклянные витрины">
+const seo: SeoMetadata = {
+    title: "Торговая мебель | СВ - торговое оборудование в Санкт-Петербурге",
+    description: "Торговая мебель для магазинов от компании СВ – это изготовление торгового оборудования на заказ: прилавки, витрины, стеллажи, стойки ресепшн, выставочное оборудование. Производство более 1200 кв.м., работаем с 2000-го года.",
+    keywords: "торговая мебель,мебель для магазина,торговая мебель спб",
+    ogTitle: "Архивы: Торговая мебель",
+    ogDescription: "Производство и продажа торгового оборудования для магазинов в Санкт-Петербурге, выгодные предложения для желающих купить экономпанели, вешала, стеллажи, манекены, мебельные фасады.",
+    image: "/og-images/catalog-torgovaya-mebel-steklyannye-vitriny.png",
+    imageAlt: "Торговая мебель | СВ - торговое оборудование в Санкт-Петербурге",
+};
+---
+<Layout seo={seo}>
     <Container class="flex-col">
         <h1 class="md:text-2xl text-xl font-semibold md:mb-8 mb-4 text-center">
             Стеклянные витрины

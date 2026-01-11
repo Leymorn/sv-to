@@ -3,13 +3,23 @@ import Layout from '@/layouts/Layout.astro';
 import Container from '@/shared/ui/Container.astro';
 import Image from '@/shared/ui/Image';
 import { RaspilDspPricesTable } from '@/widgets/pages/raspil-dsp';
+import type { SeoMetadata } from '@/shared/model/SeoMetadata';
 import {
     RASPIL_DSP_PRICES,
     RASPIL_DSP_FACADE_PRICES,
 } from '@/widgets/pages/raspil-dsp/model/prices';
----
 
-<Layout title="Raspil Dsp">
+const seo: SeoMetadata = {
+    title: "Распил ДСП, ЛДСП и кромкование | СВ - торговое оборудование в Санкт-Петербурге",
+    description: "Распил и обработка ДСП, ЛДСП, ДВП (оргалит), МДФ в Санкт-Петербурге, обработка углов, кромка (кромкование, кромкооблицовка), карта кроя, скругление углов ДСП.",
+    keywords: "распил дсп,распил лдсп,распил дсп спб",
+    ogTitle: "Распил ДСП",
+    ogDescription: "У нас Вы можете купить ламинированные ДСП по нужным размерам. Стандартный размер плиты ДСП - 2750х1830мм. С ценами на распил и кромкование вы сможете ознакомится в данном разделе. Стоимость услуг по распилу и обработке ДСП/ЛДСП, ДВП, МДФ, фанеры ДСП 16, 10, 8 мм* 38 руб. м/п ДСП 22 мм* 40 руб. м/п ДСП &gt;25 мм* 45 руб. м/п [...]",
+    image: "/og-images/uslugi-raspil-dsp.png",
+    imageAlt: "Распил ДСП, ЛДСП и кромкование | СВ - торговое оборудование в Санкт-Петербурге",
+};
+---
+<Layout seo={seo}>
     <Container class="flex-col">
         <div
             class="grid grid-cols-1 md:grid-cols-2 gap-5 text-lg md:text-xl font-medium mb-10 md:mb-20"

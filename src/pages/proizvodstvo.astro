@@ -2,16 +2,30 @@
 import Layout from '@/layouts/Layout.astro';
 import Container from '@/shared/ui/Container.astro';
 import Image from '@/shared/ui/Image';
-import Link from '@/shared/ui/Link';
+import type { SeoMetadata } from '@/shared/model/SeoMetadata';
 import {
     InfoBlock,
     ImagesBlock,
     MaterialsBlock,
     LogisticsBlock,
 } from '@/widgets/pages/proizvodstvo';
+
+const seo: SeoMetadata = {
+    title: 'Производство торгового оборудования | СВ - торговое оборудование в Санкт-Петербурге',
+    description:
+        'Изготовление торгового оборудования для магазинов на заказ – основное направление компании "СВ" ТО. Производство площадью 1200 кв.м. в Санкт-Петербурге.',
+    keywords:
+        'производство торгового оборудования,производство торговой мебели,производство мебели для магазинов',
+    ogTitle: 'Производство',
+    ogDescription:
+        'Компания «СВ» ТО владеет одним из крупнейших производственных цехов Санкт-Петербурга по изготовлению торгового оборудования и корпусной мебели для магазинов. Производство было запущено в 2000-м году, и периодически расширяется – на данный момент общая площадь производства «СВ» превышает 1200 кв.м. Основные конструкции, производимые на нашем произовдстве: прилавки, кассовые линии, торговые и выставочные витрины, стеллажи и шкафы, [...]',
+    image: '/og-images/proizvodstvo.png',
+    imageAlt:
+        'Производство торгового оборудования | СВ - торговое оборудование в Санкт-Петербурге',
+};
 ---
 
-<Layout title="Proizvodstvo">
+<Layout seo={seo}>
     <Container class="flex-col">
         <h1 class="text-lg sm:text-2xl font-semibold md:mb-8 mb-4 text-center">
             Производство торгового оборудования

@@ -10,9 +10,8 @@ import BreadCrumbs from '../widgets/breadcrumbs';
 import '../styles/global.css';
 
 interface Props {
-    title: string;
     breadCrumbs?: BreadCrumbItem[];
-    seo?: SeoMetadata;
+    seo: SeoMetadata;
 }
 
 const normalizePath = (pathname: string): string => {
@@ -20,18 +19,21 @@ const normalizePath = (pathname: string): string => {
     return pathname.endsWith('/') ? pathname.slice(0, -1) : pathname;
 };
 
-const { title, breadCrumbs, seo } = Astro.props;
+const { breadCrumbs, seo } = Astro.props;
 const currentPath = normalizePath(Astro.url.pathname);
 const resolvedBreadCrumbs = breadCrumbs ?? BREADCRUMBS[currentPath] ?? [];
 
-// Подготавливаем SEO метаданные
-const seoMetadata = seo
-    ? prepareSeoMetadata({ ...seo, title: seo.title || title }, Astro.url)
-    : prepareSeoMetadata({ title }, Astro.url);
+const seoMetadata = prepareSeoMetadata(
+    {
+        ...seo,
+        imageAlt: seo.imageAlt || seo.title,
+    },
+    Astro.url
+);
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="ru">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width" />
@@ -72,12 +74,17 @@ const seoMetadata = seo
 
         <!-- Open Graph / Facebook -->
         <meta property="og:type" content={seoMetadata.type} />
-        <meta property="og:title" content={seoMetadata.title} />
+        <meta
+            property="og:title"
+            content={seoMetadata.ogTitle || seoMetadata.title}
+        />
         {
-            seoMetadata.description && (
+            (seoMetadata.ogDescription || seoMetadata.description) && (
                 <meta
                     property="og:description"
-                    content={seoMetadata.description}
+                    content={
+                        seoMetadata.ogDescription || seoMetadata.description
+                    }
                 />
             )
         }
@@ -97,12 +104,23 @@ const seoMetadata = seo
 
         <!-- Twitter Card -->
         <meta name="twitter:card" content={seoMetadata.twitterCard} />
-        <meta name="twitter:title" content={seoMetadata.title} />
+        <meta
+            name="twitter:title"
+            content={seoMetadata.twitterTitle ||
+                seoMetadata.ogTitle ||
+                seoMetadata.title}
+        />
         {
-            seoMetadata.description && (
+            (seoMetadata.twitterDescription ||
+                seoMetadata.ogDescription ||
+                seoMetadata.description) && (
                 <meta
                     name="twitter:description"
-                    content={seoMetadata.description}
+                    content={
+                        seoMetadata.twitterDescription ||
+                        seoMetadata.ogDescription ||
+                        seoMetadata.description
+                    }
                 />
             )
         }

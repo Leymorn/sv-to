@@ -2,9 +2,17 @@
 import Layout from '@/layouts/Layout.astro';
 import Container from '@/shared/ui/Container.astro';
 import { PodstavkiPodReklamuGrid } from '@/widgets/pages/orgsteklo';
----
+import type { SeoMetadata } from '@/shared/model/SeoMetadata';
 
-<Layout title="Подставки под рекламную продукцию">
+const seo: SeoMetadata = {
+    title: "Изделия из оргстекла — СВ — торговое оборудование в Санкт-Петербурге",
+    ogTitle: "Архивы: Изделия из оргстекла",
+    ogDescription: "Производство и продажа торгового оборудования для магазинов в Санкт-Петербурге, выгодные предложения для желающих купить экономпанели, вешала, стеллажи, манекены, мебельные фасады.",
+    image: "/og-images/catalog-orgsteklo-podstavki-pod-reklamnuyu-produkciyu.png",
+    imageAlt: "Изделия из оргстекла — СВ — торговое оборудование в Санкт-Петербурге",
+};
+---
+<Layout seo={seo}>
     <Container class="flex-col">
         <h1 class="text-xl md:text-2xl font-semibold md:mb-8 mb-4 text-center">
             Подставки под рекламную продукцию

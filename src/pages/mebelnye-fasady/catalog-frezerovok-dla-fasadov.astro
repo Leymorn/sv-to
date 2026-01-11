@@ -1,13 +1,23 @@
 ---
 import Layout from '@/layouts/Layout.astro';
 import Container from '@/shared/ui/Container.astro';
+import type { SeoMetadata } from '@/shared/model/SeoMetadata';
 import {
     TextAndImage,
     FasadCatalog,
 } from '@/widgets/pages/catalog-frezerovok-dla-fasadov';
----
 
-<Layout title="Каталог фрезеровок для фасадов">
+const seo: SeoMetadata = {
+    title: "Каталог мебельных фасадов | СВ - торговое оборудование в Санкт-Петербурге",
+    description: "Выберете фрезеровку, материал и покрытие в каталоге фрезеровок мебельных фасадов и оформите заказ на изготовление у производителя фасадов в СПб.",
+    keywords: "Каталог фасадов,модели фасадов,фрезеровки фасадов,фото фасадов",
+    ogTitle: "Каталог фрезеровок для фасадов",
+    ogDescription: "Представляем каталог моделей (видов фрезеровок) мебельных и кухонных фасадов различных стилей: классика, кантри, модерн и мебельные фасады для детских. Если Вы решили купить фасад, сначала выберите понравившуюся фрезеровку, а затем декор плёнки. Стоимость фасадов на заказ (за кв. м.) * Минимальная стоимость заказа – стоимость 1 кв.м. ! Скидка дилерам – 10% Плёнка Без фрезеровки Фрезеровка простая [...]",
+    image: "/og-images/mebelnye-fasady-catalog-frezerovok-dla-fasadov.png",
+    imageAlt: "Каталог мебельных фасадов | СВ - торговое оборудование в Санкт-Петербурге",
+};
+---
+<Layout seo={seo}>
     <Container class="flex-col">
         <TextAndImage />
         <p class="text-xl md:text-2xl font-semibold md:mb-8 mb-4 text-center">

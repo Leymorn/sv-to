@@ -2,9 +2,18 @@
 import Layout from '@/layouts/Layout.astro';
 import Container from '@/shared/ui/Container.astro';
 import { ServicesList } from '@/widgets/pages/services';
----
+import type { SeoMetadata } from '@/shared/model/SeoMetadata';
 
-<Layout title="Services">
+const seo: SeoMetadata = {
+    title: "Услуги мебельного производства | СВ - торговое оборудование в Санкт-Петербурге",
+    description: "Изготовление торгового и выставочного оборудования, дизайн магазинов и торговых площадей, распил листовых материалов на станке, продажа и обработка стекла.",
+    ogTitle: "Услуги",
+    ogDescription: "В этом разделе вы сможете ознакомиться с услугами, которые мы предоставляем. Торговое оборудование на заказ Основным направлением работы нашей компании является изготовление и производство торгового оборудования на заказ Дизайн торговых помещений В качестве одной из наших новых услуг мы можем Вам предложить оформление дизайн интерьера вашего торгового или жилого помещения, выполненное профессиональным дизайнером. В перечень услуг [...]",
+    image: "/og-images/uslugi.png",
+    imageAlt: "Услуги мебельного производства | СВ - торговое оборудование в Санкт-Петербурге",
+};
+---
+<Layout seo={seo}>
     <Container class="flex-col">
         <h1 class="text-xl md:text-2xl font-semibold pb-8 text-center">
             Услуги

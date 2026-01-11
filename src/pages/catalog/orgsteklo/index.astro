@@ -8,9 +8,17 @@ import Input from '@/shared/ui/Input.tsx';
 import { ROUTES } from '@/shared/router/routes';
 import Image from '@/shared/ui/Image.tsx';
 import { ORGSTEKLO_CATEGORIES } from '@/widgets/pages/orgsteklo';
----
+import type { SeoMetadata } from '@/shared/model/SeoMetadata';
 
-<Layout title="Изделия из оргстекла">
+const seo: SeoMetadata = {
+    title: "Изделия из оргстекла — СВ — торговое оборудование в Санкт-Петербурге",
+    ogTitle: "Архивы: Изделия из оргстекла",
+    ogDescription: "Производство и продажа торгового оборудования для магазинов в Санкт-Петербурге, выгодные предложения для желающих купить экономпанели, вешала, стеллажи, манекены, мебельные фасады.",
+    image: "/og-images/catalog-orgsteklo.png",
+    imageAlt: "Изделия из оргстекла — СВ — торговое оборудование в Санкт-Петербурге",
+};
+---
+<Layout seo={seo}>
     <Container class="flex-col">
         <h1 class="md:text-2xl text-xl font-semibold text-center md:mb-8 mb-4">
             Изделия из оргстекла

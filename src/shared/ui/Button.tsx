@@ -8,7 +8,7 @@ interface Props {
     onClick?: () => void;
     classList?: string;
     htmlType?: 'button' | 'submit' | 'reset';
-    type?: ButtonVariant;
+    type?: ButtonVariant | 'default' | 'outline';
     ariaPressed?: boolean;
 }
 
@@ -21,7 +21,7 @@ export default function Button({
     ariaPressed,
 }: Props) {
     const variantClass =
-        type === 'outline'
+        type === ButtonVariant.OUTLINE
             ? 'bg-white text-[var(--color-main-color)] border-main-color'
             : 'bg-main-color border-main-color text-white hover:text-white';
 

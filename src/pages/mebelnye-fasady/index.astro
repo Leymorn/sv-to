@@ -1,6 +1,7 @@
 ---
 import Layout from '@/layouts/Layout.astro';
 import Container from '@/shared/ui/Container.astro';
+import type { SeoMetadata } from '@/shared/model/SeoMetadata';
 import {
     AdditionalServicesSection,
     FacadeTypesSection,
@@ -9,9 +10,18 @@ import {
     MebelnyeFasadySubpagesList,
     PosibleFasades,
 } from '@/widgets/pages/mebelnye-fasady';
----
 
-<Layout title="Фасады мебельные">
+const seo: SeoMetadata = {
+    title: "Цены на мебельные фасады | СВ - торговое оборудование в Санкт-Петербурге",
+    description: "Мебельные фасады в СПб на заказ – производство кухонных фасадов из МДФ, ЛДСП, каталог фрезеровок, расчёт стоимости онлайн, изготовление кухонных шкафов.",
+    keywords: "фасады,мебельные фасады,производство фасадов,фасады на заказ",
+    ogTitle: "Мебельные фасады",
+    ogDescription: "Компания \"СВ\" осуществляет производство мебельных фасадов — для кухни, домашней мебели, торгового оборудования и пр. Возможно изготовление следующих вариантов исполнения фасадов: Фасады МДФ, облицованные плёнкой ПВХ Фасады МДФ, крашенные по каталогу RAL Фасады МДФ с покрытием HPL-пластиком и кромкой ABS Фасады из массива дерева Для заказа МДФ фасадов выберите понравившиеся модели в нашем каталоге фрезеровок. [...]",
+    image: "/og-images/mebelnye-fasady.png",
+    imageAlt: "Цены на мебельные фасады | СВ - торговое оборудование в Санкт-Петербурге",
+};
+---
+<Layout seo={seo}>
     <Container class="flex-col">
         <h1 class="text-xl md:text-2xl font-semibold mb-4 md:mb-8">
             Мебельные фасады

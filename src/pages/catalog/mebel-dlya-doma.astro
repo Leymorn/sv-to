@@ -5,9 +5,19 @@ import Image from '@/shared/ui/Image';
 import Link from '@/shared/ui/Link';
 import { ROUTES } from '@/shared/router/routes';
 import { MebelDlyaDomaProductsGrid } from '@/widgets/pages/mebel-dlya-doma';
----
+import type { SeoMetadata } from '@/shared/model/SeoMetadata';
 
-<Layout title="Мебель для дома">
+const seo: SeoMetadata = {
+    title: "Каталог с ценами торгового оборудования | СВ - торговое оборудование в Санкт-Петербурге",
+    description: "Производство торговой мебели, мебельные фасады. Продажа торговых систем труб и стоек, экономпанелей, манекенов, вешал, зеркал.",
+    keywords: "Каталог и цены СВ-ТО",
+    ogTitle: "Каталоги и цены",
+    ogDescription: "Основное направление деятельности нашей компании — производство торгового оборудования (мебели) на заказ. Также мы занимаемся продажей разных торговых систем и элементов оборудования для магазинов. На этой странице Вы можете ознакомиться с ценами на нашу продукцию. В нашей компании действуют интересные скидки для дилеров на мелкий и крупный опт. Изделия из оргстекла Собственное производство изделий из [...]",
+    image: "/og-images/catalog-mebel-dlya-doma.png",
+    imageAlt: "Каталог с ценами торгового оборудования | СВ - торговое оборудование в Санкт-Петербурге",
+};
+---
+<Layout seo={seo}>
     <Container class="flex-col">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10 md:mb-20">
             <div class="text-lg md:text-xl font-medium flex flex-col gap-5">
